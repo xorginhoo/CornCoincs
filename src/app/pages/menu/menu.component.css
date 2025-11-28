@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+/* --- VARIÁVEIS --- */
+:root {
+  --cor-fundo: #87ceeb;
+  --cor-texto: #fff;
+  --cor-botao: #7b4d25;
+  --cor-botao-hover: #9b6b3c;
+  --cor-borda-botao: #4a2c14;
+}
+
+/* --- RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+
+body {
+  background: var(--cor-fundo);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('../../../../public/img/background-3.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: url('../../../../public/img/pointer.png'), pointer;
+}
+
+/* --- HEADER --- */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.logo {
+  width: 550px;
+  margin-bottom: 30px;
+}
+
+.botao-som,
+.config {
+  font-size: 50px;
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #c92c2c;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.menu-config {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background: #fff7d6;
+  border: 3px solid #4a2c14;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  z-index: 999;
+  
+}
+
+.item-config {
+  background: #7b4d25;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.item-config:hover {
+  background: #9b6b3c;
+}
+
+/* --- MAIN --- */
+.conteudo-principal {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: center
+}
+
+
+.img-fundo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.painel {
+  text-align: center;
+  color: var(--cor-texto);
+}
+
+/* Título e subtítulo */
+.titulo {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-shadow: 2px 2px 4px #000;
+}
+
+.subtitulo {
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #000;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+/* Botões */
+.botoes {
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.botao {
+  height: 100px;
+  /* Defina uma altura para o botão */
+  padding: 0;
+  border: none;
+  position: relative;
+  display: flex;
+  /* Permite alinhar o conteúdo interno (texto) */
+  justify-content: center;
+  /* Centraliza o texto horizontalmente */
+  align-items: center;
+  /* Centraliza o texto verticalmente */
+  text-decoration: none;
+  /* Remove sublinhado padrão dos links */
+  color: #FFF8D2;
+  /* Cor do texto (ajuste conforme a sua imagem de fundo) */
+  font-family: Arial, sans-serif;
+  /* Fonte do texto */
+  font-size: 1.2em;
+  /* Tamanho do texto */
+  cursor: url('../../../../public/img/pointer.png'), pointer;
+}
+
+.botao::before {
+  content: "";
+  background-image: url("../../../../public/img/menu_plaques.svg");
+  background-size: 100% 100%;
+  /* Isso faz a imagem preencher completamente o botão */
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.botao span {
+  position: relative;
+  /* Garante que o span fique acima do pseudo-elemento ::before */
+  z-index: 1;
+  /* Coloca o texto acima da imagem de fundo */
+  font-size: 24px;
+  text-shadow:
+    -1px -1px 0 #000,
+    /* Canto superior esquerdo */
+    1px -1px 0 #000,
+    /* Canto superior direito */
+    -1px 1px 0 #000,
+    /* Canto inferior esquerdo */
+    1px 1px 0 #000;
+  /* Canto inferior direito */
+}
+
+.botao:hover {
+  transform: scale(1.05);
+}
+
+/* --- FOOTER --- */
+.rodape {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  background: #82C45D;
+  backdrop-filter: blur(5px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+/* Notebooks (1024px a 1366px) */
+@media (max-width: 1366px) {
+
+  .logo {
+    width: 450px;
+  }
+
+  .botao-som,
+  .config {
+    font-size: 42px;
+    padding: 15px;
+  }
+
+  .titulo {
+    font-size: 2.5rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .botao {
+    height: 90px;
+  }
+
+  .botao span {
+    font-size: 22px;
+  }
+
+}
+
+/* Tablets (577px a 1024px) */
+@media (max-width: 1024px) and (min-width: 577px) {
+
+  .cabecalho {
+    padding: 10px;
+  }
+
+  .logo {
+    width: 350px;
+    margin-bottom: 20px;
+  }
+
+  .botao-som,
+  .config {
+    font-size: 35px;
+    padding: 10px;
+  }
+
+  .conteudo-principal {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 0.9rem;
+  }
+
+  .botoes {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .botao {
+    height: 80px;
+  }
+
+  .botao span {
+    font-size: 20px;
+  }
+
+}
+/* Celulares (até 576px) */
+@media (max-width: 576px) {
+
+  body {
+    overflow: auto;
+  }
+
+  .cabecalho {
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 250px;
+    margin-bottom: 5px;
+  }
+
+  .botao-som,
+  .config {
+    font-size: 32px;
+    padding: 8px;
+  }
+
+  .conteudo-principal {
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .subtitulo {
+    font-size: 0.8rem;
+  }
+
+  .botoes {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+  }
+
+  .botao {
+    height: 65px;
+  }
+
+  .botao span {
+    font-size: 16px;
+  }
+
+  .rodape {
+    font-size: 0.75rem;
+    padding: 8px;
+  }
+
+}
+/* Celulares muito pequenos (até 360px) */
+@media (max-width: 360px) {
+
+  .logo {
+    width: 210px;
+  }
+
+  .botao-som,
+  .config {
+    font-size: 26px;
+  }
+
+  .botao {
+    height: 55px;
+  }
+
+  .botao span {
+    font-size: 14px;
+  }
+
+}

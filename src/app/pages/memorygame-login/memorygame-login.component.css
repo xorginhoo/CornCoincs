@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mochiy Pop P One", sans-serif;
+}
+
+body {
+    background: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('../../../../public/img/background1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: url('../../../../public/img/pointer.png'), pointer;
+}
+
+
+
+/* --- HEADER --- */
+.cabecalho {
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-direction: row; /* ✔ coloca tudo na mesma linha */
+    margin-bottom: 40px; 
+}
+
+.botao-som {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 50px;
+    background: none;
+    border: none;
+    color: #ffe100;
+    cursor: pointer;
+}
+
+.logo {
+    width: 320px;
+    padding: 25px;
+    margin: auto;
+    display: block;
+}
+
+.botao-som {
+    font-size: 50px;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: #ffe100;
+    padding: 20px;
+    cursor: pointer;
+}
+
+
+/* Botão de voltar no canto */
+.botao-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+
+/* --- MAIN --- */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.title{
+    font-size: 100px;
+    margin-bottom: 10px;
+    color: #ffe449;
+    text-shadow:
+    -1px -1px 0 #000, /* Canto superior esquerdo */
+     1px -1px 0 #000, /* Canto superior direito */
+    -1px  1px 0 #000, /* Canto inferior esquerdo */
+     1px  1px 0 #000;  /* Canto inferior direito */
+}
+
+.register-input{
+    width: 320px;
+    margin-top: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(203, 203, 203);
+    text-align: center;
+}
+
+
+.btn-register{
+    width: 220px;
+    padding: 25px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(5, 196, 34);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* --- FOOTER --- */
+footer {
+    margin-top: auto;
+
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    background: #b6ce66;
+    backdrop-filter: blur(5px);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}

@@ -1,0 +1,36 @@
+<header class="cabecalho">
+  <a routerLink="/menu" class="botao-voltar">
+    <img src="img/esquerda.svg" alt="Voltar para o menu">
+  </a>
+
+  <button class="botao-som" (click)="toggleSound(!isSoundOn)">
+    <i [class]="isSoundOn ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark'"></i>
+  </button>
+</header>
+
+<main class="conteudo-principal">
+  <div class="painel">
+    <img src="img/logo.svg" id="logo" alt="Logo Corn Coincs">
+   
+    <div class="container-apps">
+      <a id="MG" routerLink="/memorygame-login" class="card-app">
+        Memory Game
+      </a>
+      <a href="#" class="card-app">
+        App 2
+      </a>
+      <a href="#" class="card-app">
+        App 3
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="rodape">
+  © Corn Coincs — Todos os direitos reservados.
+</footer>
+
+<audio id="musicaFundo" loop>
+  <source src="sound/Music_fx_faa_uma_musica_instrumental_para_um.wav" type="audio/wav">
+  Seu navegador não suporta o elemento de áudio.
+</audio>

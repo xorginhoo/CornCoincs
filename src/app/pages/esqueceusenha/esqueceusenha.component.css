@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Reset básico e fontes */
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url(../img/lock-wallpaper.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+/* Botão de voltar no canto */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+/* Container principal que divide a tela */
+.main-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Painel da Esquerda (Logo e Mascote) */
+.left-panel {
+    flex-basis: 50%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.logo {
+    position: absolute;
+    top: 100px;
+    width: 450px;
+    max-width: 80%;
+    margin-bottom: 200px;
+}
+
+.mascot {
+    width: 600px;
+    max-width: 90%;
+    margin-bottom: -20px;
+}
+
+/* Painel da Direita (Formulário) */
+.right-panel {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5%;
+}
+
+#form-area {
+    width: 80%;
+    max-width: 400px;
+}
+
+h2 {
+    font-size: 30px;
+    font-family: "Mochiy Pop P One", sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow:
+        -1px -1px 0 #000,
+        /* Canto superior esquerdo */
+        1px -1px 0 #000,
+        /* Canto superior direito */
+        -1px 1px 0 #000,
+        /* Canto inferior esquerdo */
+        1px 1px 0 #000;
+    /* Canto inferior direito */
+}
+
+p {
+    color: #ffff;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* FORMULÁRIOS GERADOS VIA JS */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #2a6bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.codigo-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.codigo-box input {
+    width: 60px;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Notebooks (entre 1024px e 1366px) */
+@media (max-width: 1366px) {
+
+    .logo {
+        width: 320px;
+        top: 80px;
+    }
+
+    .mascot {
+        width: 420px;
+    }
+
+    #form-area {
+        max-width: 350px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
+
+/* Tablets (entre 577px e 1024px) */
+@media (max-width: 1024px) and (min-width: 577px) {
+
+    .main-container {
+        flex-direction: column;
+        height: auto;
+        padding: 30px;
+    }
+
+    .left-panel,
+    .right-panel {
+        flex-basis: unset;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 350px;
+        margin: 20px auto;
+        position: relative;
+        top: 0;
+    }
+
+    .mascot {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    #form-area {
+        max-width: 400px;
+        margin-top: 20px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
+
+/* Celulares (até 576px) */
+@media (max-width: 576px) {
+
+
+    body,
+    html {
+        overflow: auto;
+    }
+
+    .main-container {
+        padding: 20px 10px;
+        height: auto;
+    }
+
+    .back-button {
+        width: 70px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .left-panel {
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        width: 280px;
+        margin-bottom: 15px;
+    }
+
+    .mascot {
+        display: none;
+    }
+
+    .form-container {
+        padding: 15px 20px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+
+    .tabs {
+        border-radius: 20px;
+        padding: 4px;
+    }
+
+    .tab-btn {
+        padding: 8px;
+        font-size: 12px;
+        border-radius: 20px;
+    }
+
+    .input-group input {
+        padding: 10px 10px 10px 35px;
+        font-size: 13px;
+    }
+
+    .input-group .icon {
+        left: 12px;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .btn-google {
+        gap: 8px;
+    }
+
+    .btn-google i {
+        font-size: 16px;
+    }
+
+    .separator {
+        margin: 15px 0;
+        font-size: 12px;
+    }
+
+    .forgot-password {
+        font-size: 11px;
+    }
+
+    .terms-text {
+        font-size: 10px;
+    }
+
+    .checkbox-group label {
+        font-size: 11px;
+    }
+
+
+}
+
+/* Celulares muito pequenos (até 360px) */
+@media (max-width: 360px) {
+    .main-container {
+        padding: 15px 8px;
+    }
+
+
+    .form-container {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 15px;
+    }
+
+    .logo {
+        margin-top: 30px;
+        width: 280px;
+    }
+
+    .mascot {
+        display: none;
+    }
+
+    .tab-btn {
+        font-size: 11px;
+        padding: 6px;
+    }
+
+
+}

@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+/* VARIÁVEIS */
+:root {
+  --cor-fundo: #254db1;
+  --cor-texto: #fff;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+
+body {
+  background-image: url('../../../../public/img/BarnNight_Background.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.cabecalho {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.botao-voltar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.botao-voltar:hover {
+  transform: scale(1.1);
+}
+
+/* CONTEÚDO */
+.conteudo-principal {
+  text-align: center;
+  padding: 20px;
+  flex: 1;
+}
+
+#logo {
+  width: 400px;
+}
+
+
+/* CARDS */
+.container-cards {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Card imagem */
+.card-link {
+  display: block;
+  width: 260px;
+  height: 350px;
+  border-radius: 22px;
+  overflow: hidden;
+  transition: transform .3s;
+  width: 420px;
+height: 600px;
+
+}
+
+.card-link:hover {
+  transform: scale(1.05);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card indisponível */
+.card {
+  width: 420px;
+  height: 600px;
+  
+
+  border-radius: 22px;
+  background: rgba(47, 20, 120, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9c99ff;
+  font-size: 28px;
+  text-align: center;
+  text-shadow: 2px 2px 3px #000;
+  animation: aparecer .7s ease forwards;
+}
+
+/* FOOTER */
+.rodape {
+  text-align: center;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* ENTRADA */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
+
+  .card-link,
+  .card {
+    width: 180px;
+    height: 250px;
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+  }
+}
+
+/* Notebooks (1024px a 1366px) */
+@media (max-width: 1366px) {
+
+  #logo {
+    width: 330px;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 0.9rem;
+  }
+
+  .container-cards {
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .card-link,
+  .card {
+    width: 250px;
+    height: 400px;
+  }
+
+}
+/* Tablets (577px a 1024px) */
+@media (max-width: 1024px) and (min-width: 577px) {
+
+  #logo {
+    width: 300px;
+  }
+
+  .titulo {
+    font-size: 1.9rem;
+  }
+
+  .subtitulo {
+    font-size: 0.9rem;
+  }
+
+  .container-cards {
+    gap: 25px;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+
+  .card-link,
+  .card {
+    width: 300px;
+    height: 420px;
+  }
+
+}

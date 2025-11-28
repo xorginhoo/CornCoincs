@@ -1,0 +1,86 @@
+<div class="main-container">
+    <div class="left-panel">
+        <img src="img/logo.svg" alt="Corn Coincs Logo" class="logo">
+        <img src="img/gugu.svg" alt="Mascote" class="mascot">
+    </div>
+
+    <div class="right-panel">
+
+        <div class="form-container">
+            <div class="tabs">
+                <button id="login-tab" class="tab-btn active">Login</button>
+                <button id="register-tab" class="tab-btn">Cadastro</button>
+            </div>
+
+            <!-- Login -->
+            <form id="login-form" class="form-content active">
+                <div class="input-group">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="email" placeholder="Digite seu email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" placeholder="Digite sua senha" required class="password-field">
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+
+                <a href="/esqueceusenha" class="forgot-password">ESQUECI MINHA SENHA</a>
+
+
+                <button type="submit" class="btn btn-primary">Login</button>
+
+                <div class="separator">ou</div>
+
+                <button type="button" class="btn btn-google" onclick="loginGoogle()">
+                    <i class="fa-brands fa-google"></i>
+                    Continue com Google
+                </button>
+            </form>
+
+            <!-- Cadastro -->
+            <form id="register-form" class="form-content">
+                <div class="input-group">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="email" placeholder="Digite seu email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" placeholder="Digite sua senha" required class="password-field">
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" placeholder="Confirme sua senha" required class="password-field">
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+
+
+                <p class="terms-text">
+                    Os dados serão mantidos em nossa base de dados enquanto for desejado por você. A qualquer
+                    momento poderá editar ou remover tais dados. Termos e condições.
+                </p>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms">
+                    <label for="terms">Sim, li e concordo com os termos e condições</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Sim, também quero receber descontos e novidades</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+                <div class="separator">ou</div>
+
+                <button type="button" onclick="loginGoogle()" class="btn btn-google">
+                    <i class="fa-brands fa-google"></i>
+                    Continue com Google
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
