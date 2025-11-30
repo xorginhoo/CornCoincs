@@ -6,21 +6,16 @@
   --cor-texto: #fff;
 }
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Mochiy Pop P One", sans-serif;
-}
-
-body {
-  background-image: url('../../../../public/img/BarnNight_Background.png');
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
+.bg-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/img/background-3.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* HEADER */
@@ -74,7 +69,7 @@ body {
   overflow: hidden;
   transition: transform .3s;
   width: 420px;
-height: 600px;
+  height: 600px;
 
 }
 
@@ -92,7 +87,7 @@ height: 600px;
 .card {
   width: 420px;
   height: 600px;
-  
+
 
   border-radius: 22px;
   background: rgba(47, 20, 120, 0.8);
@@ -169,6 +164,7 @@ height: 600px;
   }
 
 }
+
 /* Tablets (577px a 1024px) */
 @media (max-width: 1024px) and (min-width: 577px) {
 

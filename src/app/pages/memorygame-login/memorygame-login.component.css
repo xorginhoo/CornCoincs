@@ -1,24 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
-/* --- RESET --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Mochiy Pop P One", sans-serif;
+
+.bg-container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/img/background1.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  cursor: url('/img/pointer.png'), auto;
+  font-family: "Mochiy Pop P One", sans-serif;
 }
-
-body {
-    background: var(--cor-fundo);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-image: url('../../../../public/img/background1.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: url('../../../../public/img/pointer.png'), pointer;
-}
-
-
 
 /* --- HEADER --- */
 .cabecalho {

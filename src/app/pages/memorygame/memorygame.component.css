@@ -1,24 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
-/* --- RESET --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Mochiy Pop P One", sans-serif;
-}
-
-body {
-    background: var(--cor-fundo);
+.bg-container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('/img/background1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background-image: url('../../../../public/img/background1.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: url('../../../../public/img/pointer.png'), pointer;
+    cursor: url('/img/pointer.png'), auto;
+    font-family: "Mochiy Pop P One", sans-serif;
 }
-
-
 
 
 /* --- HEADER --- */
@@ -29,8 +21,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    flex-direction: row; /* ✔ coloca tudo na mesma linha */
-    margin-bottom: 40px; 
+    flex-direction: row;
+    /* ✔ coloca tudo na mesma linha */
+    margin-bottom: 40px;
 }
 
 .botao-som {
@@ -89,18 +82,22 @@ main {
     gap: 20px;
 }
 
-.title{
+.title {
     font-size: 100px;
     margin-bottom: 10px;
     color: #ffe449;
     text-shadow:
-    -1px -1px 0 #000, /* Canto superior esquerdo */
-     1px -1px 0 #000, /* Canto superior direito */
-    -1px  1px 0 #000, /* Canto inferior esquerdo */
-     1px  1px 0 #000;  /* Canto inferior direito */
+        -1px -1px 0 #000,
+        /* Canto superior esquerdo */
+        1px -1px 0 #000,
+        /* Canto superior direito */
+        -1px 1px 0 #000,
+        /* Canto inferior esquerdo */
+        1px 1px 0 #000;
+    /* Canto inferior direito */
 }
 
-.register-input{
+.register-input {
     width: 320px;
     margin-top: 2rem;
     padding: 20px;
@@ -110,7 +107,7 @@ main {
 }
 
 
-.btn-register{
+.btn-register {
     width: 220px;
     padding: 25px;
     border-radius: 20px;
@@ -128,20 +125,22 @@ main {
 /* --- FOOTER --- */
 footer {
     margin-top: auto;
-
     text-align: center;
     padding: 10px;
     font-size: 0.9rem;
     background: #b6ce66;
     backdrop-filter: blur(5px);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
 }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    width: 100%;   /* antes era 80% */
-    max-width: 65%; /* diminui o limite máximo */
+    width: 100%;
+    /* antes era 80% */
+    max-width: 65%;
+    /* diminui o limite máximo */
     gap: 15px;
     margin: 0 auto;
 }
@@ -217,3 +216,4 @@ footer {
 .restart-button:hover {
     background-color: rgb(255, 200, 0);
 }
+

@@ -1,15 +1,63 @@
-<a href="login.html"><img src="img/esquerda.svg" alt="Voltar" class="back-button"></a>
-
+<div class="bg-container">
 <div class="main-container">
 
+    <!-- Botão voltar -->
+    <a routerLink="/">
+        <img src="/img/esquerda.svg" alt="Voltar" class="back-button">
+    </a>
+    
+
     <div class="left-panel">
-        <img src="public/img/logo.svg" alt="Corn Coincs Logo" class="logo">
-        <img src="public/img/mimoo_ES.svg" alt="Mascote" class="mascot">
+        <img src="/img/logo.svg" alt="Corn Coincs Logo" class="logo">
+        <img src="/img/mimoo_ES.svg" alt="Mascote" class="mascot">
     </div>
 
     <div class="right-panel">
-        <div id="form-area"></div>
+        <div id="form-area">
 
+            <!-- Etapa 1 -->
+            <div *ngIf="step === 1">
+                <h2>Esqueceu a senha?</h2>
+                <p>Digite seu e-mail para enviarmos um código.</p>
 
+                <form (ngSubmit)="sendCode()">
+                    <input type="email" placeholder="Digite seu e-mail"
+                        [(ngModel)]="email" name="email" required>
+
+                    <button type="submit">Enviar código</button>
+                </form>
+            </div>
+
+            <!-- Etapa 2 -->
+            <div *ngIf="step === 2">
+                <h2>Código de verificação</h2>
+                <p>Insira o código enviado ao seu e-mail.</p>
+
+                <div class="codigo-box">
+                    <input maxlength="1" name="c1" [(ngModel)]="code[0]">
+                    <input maxlength="1" name="c2" [(ngModel)]="code[1]">
+                    <input maxlength="1" name="c3" [(ngModel)]="code[2]">
+                    <input maxlength="1" name="c4" [(ngModel)]="code[3]">
+                </div>
+
+                <button (click)="verifyCode()">Verificar</button>
+            </div>
+
+            <!-- Etapa 3 -->
+            <div *ngIf="step === 3">
+                <h2>Redefinir senha</h2>
+
+                <input type="password" placeholder="Nova senha"
+                    [(ngModel)]="newPassword" name="newPass">
+
+                <input type="password" placeholder="Confirmar senha"
+                    [(ngModel)]="confirmPassword" name="confirmPass">
+
+                <button (click)="resetPassword()">Confirmar</button>
+            </div>
+
+        </div>
     </div>
+
+</div>
 </div>

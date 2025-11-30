@@ -1,15 +1,15 @@
 <header class="header">
         
     <nav class="nav">
-        <a href="menu.html" class="link-img-back"><img src="img/esquerda.svg" alt="Voltar" class="back-button"></a>
+        <a routerLink="/menu" class="link-img-back"><img src="img/esquerda.svg" alt="Voltar" class="back-button"></a>
 
 
 
         <ul class="nav-menu">
-            <li><a href="#produtos" class="nav-link">Materiais</a></li>
-            <li><a href="#combos" class="nav-link">Combos</a></li>
+            <li><a routerLink="#produtos" class="nav-link">Materiais</a></li>
+            <li><a routerLink="#combos" class="nav-link">Combos</a></li>
             <li>
-                <a href="#combos" class="botao-escolas"> Para Escolas</a>
+                <a routerLink="#combos" class="botao-escolas"> Para Escolas</a>
         
             </li>
         </ul>
@@ -18,8 +18,8 @@
     </nav>
 
     <div class="mobile-menu" id="mobile-menu">
-        <a href="#produtos">Materiais</a>
-        <a href="#combos">Combos</a>
+        <a routerLink="#produtos">Materiais</a>
+        <a routerLink="#combos">Combos</a>
         <button class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
             🎓 Para Escolas
         </button>
@@ -32,10 +32,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-       <img src="img/Educa/educacc3.svg" class="logo" alt="">
+       <img src="/img/Educa/educacc3.svg" class="logo" alt="">
 
             <div class="hero-buttons">
-                <a class="botao-hero" href="#produtos">
+                <a class="botao-hero" routerLink="#produtos">
                     Ver Materiais 
                 </a>
 
@@ -69,7 +69,7 @@
             <!-- Product 1 -->
             <div class="product-card">
                 <div class="product-badge">2-5 anos</div>
-                <div class="product-image primary"><img src="img/materiais/livrocolorir.png" alt=""></div>
+                <div class="product-image primary"><img src="/img/materiais/livrocolorir.png" alt=""></div>
                 <div class="product-content">
                     <h3>Livro Colorir: Moedas</h3>
                     <p>Introdução ao reconhecimento de moedas e ao hábito de poupar</p>
@@ -83,7 +83,7 @@
             <!-- Product 2 -->
             <div class="product-card">
                 <div class="product-badge">1º/2º Ano</div>
-                <div class="product-image secondary"><img src="img/materiais/Modulo.png" alt=""></div>
+                <div class="product-image secondary"><img src="/img/materiais/Modulo.png" alt=""></div>
                 <div class="product-content">
                     <h3>Módulo: Valor do Trabalho</h3>
                     <p>Conceito de esforço, recompensa e planejamento de metas</p>
@@ -97,7 +97,7 @@
             <!-- Product 3 -->
             <div class="product-card">
                 <div class="product-badge">3º Ano</div>
-                <div class="product-image accent"><img src="img/materiais/kit1.png" alt=""></div>
+                <div class="product-image accent"><img src="/img/materiais/kit1.png" alt=""></div>
                 <div class="product-content">
                     <h3>Kit: Decisão de Compra</h3>
                     <p>Diferenciar desejo de necessidade e priorizar gastos</p>
@@ -110,8 +110,8 @@
 
             <!-- Product 4 - Featured -->
             <div class="product-card featured">
-                <div class="product-badge" style="animation: pulse 2s infinite;"><i class="ph ph-sparkle"></i> POPULAR</div>
-                <div class="product-image primary"><img src="img/materiais/kit2.png" alt=""></div>
+                <div class="product-badge" style="animation: pulse 2s infinite;"><i class="ph ph-sparkle"></i>POPULAR</div>
+                <div class="product-image primary"><img src="/img/materiais/kit2.png" alt=""></div>
                 <div class="product-content">
                     <h3>Coleção Completa</h3>
                     <p>Pacote completo de módulos financeiros para 4 anos</p>
@@ -120,7 +120,7 @@
                             <span class="price-old">R$ 220,00</span>
                             <span class="product-price gradient">R$ 179,90</span>
                         </div>
-                        <button class="btn btn-primary btn-small"><i class="ph ph-shopping-cart-simple"></i> Adicionar</button>
+                        <button class="btn btn-primary btn-small"><i class="ph ph-shopping-cart-simple"></i>Adicionar</button>
                     </div>
                 </div>
             </div>
@@ -204,30 +204,30 @@
   <div class="footer-section">
     <h4>Materiais</h4>
     <ul class="footer-links">
-      <li><a href="#produtos">Livros de Colorir</a></li>
-      <li><a href="#produtos">Módulos Educacionais</a></li>
-      <li><a href="#produtos">Kits Completos</a></li>
-      <li><a href="#combos">Combos Especiais</a></li>
+      <li><a routerLink="#produtos">Livros de Colorir</a></li>
+      <li><a routerLink="#produtos">Módulos Educacionais</a></li>
+      <li><a routerLink="#produtos">Kits Completos</a></li>
+      <li><a routerLink="#combos">Combos Especiais</a></li>
     </ul>
   </div>
 
   <div class="footer-section">
     <h4>Instituições</h4>
     <ul class="footer-links">
-      <li><a href="#">Para Escolas</a></li>
-      <li><a href="#">Treinamento para Professores</a></li>
-      <li><a href="#">Material Didático</a></li>
-      <li><a href="#">Parcerias</a></li>
+      <li><a routerLink="#">Para Escolas</a></li>
+      <li><a routerLink="#">Treinamento para Professores</a></li>
+      <li><a routerLink="#">Material Didático</a></li>
+      <li><a routerLink="#">Parcerias</a></li>
     </ul>
   </div>
 
   <div class="footer-section">
     <h4>Suporte</h4>
     <ul class="footer-links">
-      <li><a href="#">FAQ</a></li>
-      <li><a href="#">Contato</a></li>
-      <li><a href="#">Política de Privacidade</a></li>
-      <li><a href="#">Termos de Uso</a></li>
+      <li><a routerLink="#">FAQ</a></li>
+      <li><a routerLink="#">Contato</a></li>
+      <li><a routerLink="#">Política de Privacidade</a></li>
+      <li><a routerLink="#">Termos de Uso</a></li>
     </ul>
   </div>
 </div>

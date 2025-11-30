@@ -1,28 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
-
 /* --- VARIÁVEIS --- */
 :root {
   --cor-fundo: #87ceeb;
   --cor-texto: #fff;
 }
 
-/* --- RESET --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Mochiy Pop P One", sans-serif;
-}
-
-body {
-  background: var(--cor-fundo);
+.bg-container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/img/background-3.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-image: url('../../../../public/img/background-3.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: url('../../../../public/img/pointer.png'), pointer;
+  cursor: url('/img/pointer.png'), auto;
+  font-family: "Mochiy Pop P One", sans-serif;
 }
 
 /* --- HEADER --- */
@@ -48,21 +41,21 @@ body {
 
 /* Botão de voltar no canto */
 .botao-voltar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 120px;
-    cursor: pointer;
-    z-index: 100;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px;
+  cursor: pointer;
+  z-index: 100;
 }
 
 
 /* --- MAIN --- */
 
-#logo{
-    width: 350px;
-    margin-bottom: 30px;
-  }
+#logo {
+  width: 350px;
+  margin-bottom: 30px;
+}
 
 .conteudo-principal {
   flex: 1;
@@ -119,10 +112,10 @@ body {
   font-weight: bold;
   transition: transform .3s, background .3s;
   animation: aparecer 0.7s ease forwards;
-  box-shadow: #065d00 5px 10px ;
+  box-shadow: #065d00 5px 10px;
 }
 
-#MG{
+#MG {
   background-image: url(../../../../public/img/MemoryGame-Banner.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -139,6 +132,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -152,7 +146,7 @@ body {
   font-size: 0.9rem;
   background: #82C45D;
   backdrop-filter: blur(5px);
-  font-family: Arial, Helvetica, sans-serif;
+ font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
 

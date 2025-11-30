@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { EsqueciSenhaComponent } from './pages/esqueceusenha/esqueceusenha.component';
@@ -19,9 +18,3 @@ export const routes: Routes = [
   { path: 'memorygame', component: MemorygameComponent },
   { path: 'memorygame-login', component: MemorygameLoginComponent },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {}

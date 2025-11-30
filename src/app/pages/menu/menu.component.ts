@@ -1,116 +1,66 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';  // ★ IMPORT NECESSÁRIO
 
 @Component({
   selector: 'app-menu',
+  standalone: true,
+  imports: [RouterLink],  // ★ AGORA FUNCIONA
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit, OnDestroy {
-  // Elementos com tipagem adequada
+export class MenuComponent implements OnInit {
+
   private musica!: HTMLAudioElement;
   private botaoSom!: HTMLElement;
   private btnConfig!: HTMLElement;
   private menuConfig!: HTMLElement;
   private logoutBtn!: HTMLElement;
 
-  // Estado do componente
   somAtivo: boolean = true;
 
+  constructor(private router: Router) { }
+
   ngOnInit(): void {
-    this.initializeElements();
-    this.setupEventListeners();
-    this.setInitialAudioState();
-  }
-
-  ngOnDestroy(): void {
-    // Limpeza para evitar memory leaks
-    this.removeEventListeners();
-  }
-
-  private initializeElements(): void {
     this.musica = document.getElementById("musicaFundo") as HTMLAudioElement;
     this.botaoSom = document.getElementById("botaoSom") as HTMLElement;
     this.btnConfig = document.getElementById("configuracao") as HTMLElement;
     this.menuConfig = document.getElementById("menuConfig") as HTMLElement;
     this.logoutBtn = document.getElementById("logoutBtn") as HTMLElement;
 
-    // Verifica se todos os elementos foram encontrados
-    this.validateElements();
+    this.inicializarEventos();
+    this.inicializarSom();
   }
 
-  private validateElements(): void {
-    const elements = [
-      { element: this.musica, name: 'musicaFundo' },
-      { element: this.botaoSom, name: 'botaoSom' },
-      { element: this.btnConfig, name: 'configuracao' },
-      { element: this.menuConfig, name: 'menuConfig' },
-      { element: this.logoutBtn, name: 'logoutBtn' }
-    ];
+  private inicializarEventos(): void {
+    this.btnConfig?.addEventListener("click", () => {
+      const visivel = this.menuConfig.style.display === "flex";
+      this.menuConfig.style.display = visivel ? "none" : "flex";
+    });
 
-    elements.forEach(({ element, name }) => {
-      if (!element) {
-        console.error(`Elemento não encontrado: ${name}`);
-      }
+    this.logoutBtn?.addEventListener("click", () => {
+      alert("Você saiu da conta!");
+      this.router.navigate(['/']);
+    });
+
+    this.botaoSom?.addEventListener("click", () => {
+      this.toggleSom();
     });
   }
 
-  private setupEventListeners(): void {
-    // Configuração do menu
-    if (this.btnConfig && this.menuConfig) {
-      this.btnConfig.addEventListener("click", this.toggleMenuConfig.bind(this));
-    }
+  private inicializarSom(): void {
+    if (!this.musica) return;
 
-    // Logout
-    if (this.logoutBtn) {
-      this.logoutBtn.addEventListener("click", this.handleLogout.bind(this));
-    }
-
-    // Controle de áudio
-    if (this.botaoSom) {
-      this.botaoSom.addEventListener("click", this.toggleAudio.bind(this));
-    }
-  }
-
-  private removeEventListeners(): void {
-    // Em uma aplicação real, você removeria os event listeners aqui
-    // Mas como estamos usando bind, isso cria novas funções
-    // Em produção, considere usar Observable.fromEvent e unsubscribe
-  }
-
-  private setInitialAudioState(): void {
-    if (!this.botaoSom || !this.musica) return;
-
-    // Define o ícone inicial
     this.botaoSom.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
 
-    // Tenta reproduzir o áudio
-    if (this.musica) {
-      this.musica.play().catch((erro: Error) => {
-        console.log("Autoplay bloqueado pelo navegador:", erro);
-        this.somAtivo = false;
-        if (this.botaoSom) {
-          this.botaoSom.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
-        }
-      });
-    }
+    this.musica.play().catch(() => {
+      console.log("Autoplay bloqueado — som iniciará como mudo");
+      this.somAtivo = false;
+      this.botaoSom.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+    });
   }
 
-  private toggleMenuConfig(): void {
-    if (!this.menuConfig) return;
-    
-    const currentDisplay = this.menuConfig.style.display;
-    this.menuConfig.style.display = currentDisplay === "flex" ? "none" : "flex";
-  }
-
-  private handleLogout(): void {
-    alert("Você saiu da conta!");
-    // Redirecionamento real (descomente quando implementar):
-    // this.router.navigate(['/login']);
-  }
-
-  private toggleAudio(): void {
-    if (!this.musica || !this.botaoSom) return;
-
+  private toggleSom(): void {
     this.somAtivo = !this.somAtivo;
 
     if (this.somAtivo) {
@@ -122,14 +72,18 @@ export class MenuComponent implements OnInit, OnDestroy {
     }
   }
 
-  // Listener para cliques fora do menu
   @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent): void {
+  fecharMenuFora(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+
     if (!this.menuConfig || !this.btnConfig) return;
 
-    const target = event.target as HTMLElement;
-    
-    if (!this.menuConfig.contains(target) && target !== this.btnConfig) {
+    const clicouFora =
+      !this.menuConfig.contains(target) &&
+      !this.btnConfig.contains(target);
+
+
+    if (clicouFora) {
       this.menuConfig.style.display = "none";
     }
   }

@@ -1,28 +1,42 @@
-<header class="cabecalho">
-    <button class="botao-som" id="botaoSom"><i class="fa-solid fa-volume-high"></i></button>
-    <button class="config"><i class="fa-solid fa-gear" id="configuracao"></i></button>
+<div class="bg-container">
+
+  <header class="cabecalho">
+
+    <!-- Botão de som -->
+    <button class="botao-som" id="botaoSom">
+      <i class="fa-solid fa-volume-high"></i>
+    </button>
+
+    <!-- Botão de configuração -->
+    <button class="config" id="configuracao">
+      <i class="fa-solid fa-gear"></i>
+    </button>
+
+    <!-- Menu de configuração -->
     <div class="menu-config" id="menuConfig">
       <button class="item-config">Informações</button>
-      <a href="login.html" id="logoutBtn" class="item-config" >Logout</a>
+
+      <!-- Logout com routerLink -->
+      <button id="logoutBtn" class="item-config">
+        Logout
+      </button>
     </div>
-    
+
   </header>
 
   <main class="conteudo-principal">
 
-      <div class="painel">
+    <div class="painel">
 
-        <img src="img/logo.svg" alt="Corn Coincs Logo" class="logo">
-    
+      <img src="/img/logo.svg" alt="Corn Coincs Logo" class="logo">
 
-        <div class="botoes">
-  
+      <div class="botoes">
 
-          <a class="botao" routerLink="/missoes"><span>MISSÕES</span></a>
-          <a class="botao" routerLink="/colheitadosaber"><span>COLHEITA DO SABER</span></a>
-          <a class="botao" routerLink="/educacoincs"><span>EDUCA COINCS</span></a>
-          <!-- <a class="botao"><span>PROGRESSOS</span></a> -->
-        </div>
+        <a class="botao" routerLink="/missoes"><span>MISSÕES</span></a>
+        <a class="botao" routerLink="/colheitadosaber"><span>COLHEITA DO SABER</span></a>
+        <a class="botao" routerLink="/educacoincs"><span>EDUCA COINCS</span></a>
+
+      </div>
 
     </div>
 
@@ -33,5 +47,7 @@
   </footer>
 
   <audio id="musicaFundo" loop autoplay>
-    <source src="sound/Music_fx_faa_uma_musica_instrumental_para_um.wav" type="audio/wav">
+    <source src="/sound/Music_fx_faa_uma_musica_instrumental_para_um.wav" type="audio/wav">
   </audio>
+
+</div>
