@@ -1,44 +1,48 @@
 <header class="header">
-        
     <nav class="nav">
-        <a routerLink="/menu" class="link-img-back"><img src="img/esquerda.svg" alt="Voltar" class="back-button"></a>
-
-
+        <a routerLink="/menu" class="link-img-back">
+            <img src="img/esquerda.svg" alt="Voltar" class="back-button">
+        </a>
 
         <ul class="nav-menu">
-            <li><a routerLink="#produtos" class="nav-link">Materiais</a></li>
-            <li><a routerLink="#combos" class="nav-link">Combos</a></li>
-            <li>
-                <a routerLink="#combos" class="botao-escolas"> Para Escolas</a>
-        
-            </li>
+            <li><a routerLink="/educacoincs" fragment="produtos" class="nav-link">Materiais</a></li>
+            <li><a routerLink="/educacoincs" fragment="combos" class="nav-link">Combos</a></li>
+            <li><a routerLink="/educacoincs" fragment="combos" class="botao-escolas">Para Escolas</a></li>
+
         </ul>
 
-        <button class="mobile-menu-btn" id="mobile-menu-toggle">☰</button>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" (click)="toggleMobileMenu()">
+            ☰
+          </button>          
     </nav>
 
     <div class="mobile-menu" id="mobile-menu">
-        <a routerLink="#produtos">Materiais</a>
-        <a routerLink="#combos">Combos</a>
-        <button class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" (click)="toggleMobileMenu()">
+            X
+          </button>    
+        <a routerLink="/educacoincs" fragment="produtos">Materiais</a>
+        <a routerLink="/educacoincs" fragment="combos">Combos</a>
+
+        <a routerLink="/educacoincs" fragment="combos" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
             🎓 Para Escolas
-        </button>
+        </a>
     </div>
 </header>
 
 
 <!-- MAIN -->
 <main class="main">
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-       <img src="/img/Educa/educacc3.svg" class="logo" alt="">
+
+            <img src="/img/Educa/educacc3.svg" class="logo" alt="">
 
             <div class="hero-buttons">
-                <a class="botao-hero" routerLink="#produtos">
-                    Ver Materiais 
+                <a class="botao-hero" [routerLink]="[]" fragment="produtos">
+                    Ver Materiais
                 </a>
-
             </div>
 
             <div class="hero-stats">
@@ -50,13 +54,13 @@
                     <div class="stat-icon secondary">🎓</div>
                     <span><strong>+200</strong> Escolas Parceiras</span>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-icon accent">⭐</div>
-                    <span><strong>Aprovado</strong> pela BNCC</span>
+                <div class="stat-item accent">
+                    ⭐ Aprovado pela BNCC
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Products Section -->
     <section id="produtos" class="products">
@@ -66,16 +70,21 @@
         </div>
 
         <div class="products-grid">
+
             <!-- Product 1 -->
             <div class="product-card">
                 <div class="product-badge">2-5 anos</div>
-                <div class="product-image primary"><img src="/img/materiais/livrocolorir.png" alt=""></div>
+                <div class="product-image primary">
+                    <img src="/img/materiais/livrocolorir.png" alt="">
+                </div>
                 <div class="product-content">
                     <h3>Livro Colorir: Moedas</h3>
                     <p>Introdução ao reconhecimento de moedas e ao hábito de poupar</p>
                     <div class="product-footer">
                         <span class="product-price">R$ 34,90</span>
-                        <button class="btn btn-primary btn-small"><i class="ph ph-shopping-cart-simple"></i>  Adicionar</button>
+                        <button class="btn btn-primary btn-small">
+                            <i class="ph ph-shopping-cart-simple"></i> Adicionar
+                        </button>
                     </div>
                 </div>
             </div>
@@ -83,13 +92,17 @@
             <!-- Product 2 -->
             <div class="product-card">
                 <div class="product-badge">1º/2º Ano</div>
-                <div class="product-image secondary"><img src="/img/materiais/Modulo.png" alt=""></div>
+                <div class="product-image secondary">
+                    <img src="/img/materiais/Modulo.png" alt="">
+                </div>
                 <div class="product-content">
                     <h3>Módulo: Valor do Trabalho</h3>
                     <p>Conceito de esforço, recompensa e planejamento de metas</p>
                     <div class="product-footer">
                         <span class="product-price">R$ 49,50</span>
-                        <button class="btn btn-primary btn-small"><i class="ph ph-shopping-cart-simple"></i> Adicionar</button>
+                        <button class="btn btn-primary btn-small">
+                            <i class="ph ph-shopping-cart-simple"></i> Adicionar
+                        </button>
                     </div>
                 </div>
             </div>
@@ -97,21 +110,29 @@
             <!-- Product 3 -->
             <div class="product-card">
                 <div class="product-badge">3º Ano</div>
-                <div class="product-image accent"><img src="/img/materiais/kit1.png" alt=""></div>
+                <div class="product-image accent">
+                    <img src="/img/materiais/kit1.png" alt="">
+                </div>
                 <div class="product-content">
                     <h3>Kit: Decisão de Compra</h3>
                     <p>Diferenciar desejo de necessidade e priorizar gastos</p>
                     <div class="product-footer">
                         <span class="product-price">R$ 72,00</span>
-                        <button class="btn btn-primary btn-small"><i class="ph ph-shopping-cart-simple"></i>  Adicionar</button>
+                        <button class="btn btn-primary btn-small">
+                            <i class="ph ph-shopping-cart-simple"></i> Adicionar
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Product 4 - Featured -->
+            <!-- Product 4 -->
             <div class="product-card featured">
-                <div class="product-badge" style="animation: pulse 2s infinite;"><i class="ph ph-sparkle"></i>POPULAR</div>
-                <div class="product-image primary"><img src="/img/materiais/kit2.png" alt=""></div>
+                <div class="product-badge" style="animation: pulse 2s infinite;">
+                    <i class="ph ph-sparkle"></i> POPULAR
+                </div>
+                <div class="product-image primary">
+                    <img src="/img/materiais/kit2.png" alt="">
+                </div>
                 <div class="product-content">
                     <h3>Coleção Completa</h3>
                     <p>Pacote completo de módulos financeiros para 4 anos</p>
@@ -120,12 +141,16 @@
                             <span class="price-old">R$ 220,00</span>
                             <span class="product-price gradient">R$ 179,90</span>
                         </div>
-                        <button class="btn btn-primary btn-small"><i class="ph ph-shopping-cart-simple"></i>Adicionar</button>
+                        <button class="btn btn-primary btn-small">
+                            <i class="ph ph-shopping-cart-simple"></i> Adicionar
+                        </button>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
+
 
     <!-- Combos Section -->
     <section id="combos" class="combos">
@@ -135,38 +160,45 @@
         </div>
 
         <div class="combos-grid">
+
             <!-- Combo 1 -->
             <div class="combo-card">
                 <div class="combo-icon primary">🐷</div>
                 <h3>Combo Cofrinho</h3>
                 <p>Foco em Poupança e Reconhecimento de Valores</p>
+
                 <ul class="combo-list">
                     <li>Livro de Colorir Moedas</li>
                     <li>Literatura: Primeira Moeda</li>
                     <li>Kit de Adesivos Recompensa</li>
                 </ul>
+
                 <div class="combo-price-wrapper">
-                    <span class="price-old">De R$ 110,00</span>
+                    <span class="price-old">R$ 110,00</span>
                     <span class="product-price">R$ 89,90</span>
                 </div>
+
                 <button class="btn btn-primary" style="width: 100%;">Comprar Combo</button>
             </div>
 
-            <!-- Combo 2 - Featured -->
+            <!-- Combo 2 -->
             <div class="combo-card featured">
                 <div class="combo-badge">MAIS VENDIDO</div>
                 <div class="combo-icon secondary">📊</div>
                 <h3>Letramento Financeiro</h3>
                 <p>Foco em Orçamento e Decisões Inteligentes</p>
+
                 <ul class="combo-list">
                     <li>Módulo: Valor do Trabalho</li>
                     <li>Kit: Decisão de Compra</li>
                     <li>Caderno Orçamento Semanal</li>
                 </ul>
+
                 <div class="combo-price-wrapper">
-                    <span class="price-old">De R$ 190,00</span>
+                    <span class="price-old">R$ 190,00</span>
                     <span class="product-price">R$ 155,00</span>
                 </div>
+
                 <button class="btn btn-primary" style="width: 100%;">Comprar Combo</button>
             </div>
 
@@ -175,64 +207,76 @@
                 <div class="combo-icon accent">📈</div>
                 <h3>Investidores Naturais</h3>
                 <p>Introdução a Juros e Empreendedorismo</p>
+
                 <ul class="combo-list">
                     <li>Módulo: O Poder dos Juros</li>
                     <li>Manual Mini-Empreendedor</li>
                     <li>Jogo: Ciclo do Dinheiro</li>
                 </ul>
+
                 <div class="combo-price-wrapper">
-                    <span class="price-old">De R$ 200,00</span>
+                    <span class="price-old">R$ 200,00</span>
                     <span class="product-price">R$ 169,90</span>
                 </div>
+
                 <button class="btn btn-primary" style="width: 100%;">Comprar Combo</button>
             </div>
+
         </div>
     </section>
+
 </main>
+
 
 <!-- FOOTER -->
 <footer class="footer">
-<div class="footer-content">
-  <div class="footer-section">
-    <h4>Sobre CornCoins</h4>
-    <p style="opacity: 0.8; font-size: 0.875rem; line-height: 1.6;">
-      Educação financeira lúdica e divertida para crianças. 
-      Construindo o futuro financeiro desde cedo! 🌽
-    </p>
-  </div>
 
-  <div class="footer-section">
-    <h4>Materiais</h4>
-    <ul class="footer-links">
-      <li><a routerLink="#produtos">Livros de Colorir</a></li>
-      <li><a routerLink="#produtos">Módulos Educacionais</a></li>
-      <li><a routerLink="#produtos">Kits Completos</a></li>
-      <li><a routerLink="#combos">Combos Especiais</a></li>
-    </ul>
-  </div>
+    <div class="footer-content">
 
-  <div class="footer-section">
-    <h4>Instituições</h4>
-    <ul class="footer-links">
-      <li><a routerLink="#">Para Escolas</a></li>
-      <li><a routerLink="#">Treinamento para Professores</a></li>
-      <li><a routerLink="#">Material Didático</a></li>
-      <li><a routerLink="#">Parcerias</a></li>
-    </ul>
-  </div>
+        <div class="footer-section">
+            <h4>Sobre CornCoins</h4>
+            <p style="opacity: 0.8; font-size: 0.875rem; line-height: 1.6;">
+                Educação financeira lúdica e divertida para crianças.
+                Construindo o futuro financeiro desde cedo! 🌽
+            </p>
+        </div>
 
-  <div class="footer-section">
-    <h4>Suporte</h4>
-    <ul class="footer-links">
-      <li><a routerLink="#">FAQ</a></li>
-      <li><a routerLink="#">Contato</a></li>
-      <li><a routerLink="#">Política de Privacidade</a></li>
-      <li><a routerLink="#">Termos de Uso</a></li>
-    </ul>
-  </div>
-</div>
+        <div class="footer-section">
+            <h4>Materiais</h4>
+            <ul class="footer-links">
+                <li><a routerLink="/educacoincs" fragment="produtos">Livros de Colorir</a></li>
+                <li><a routerLink="/educacoincs" fragment="produtos">Módulos Educacionais</a></li>
+                <li><a routerLink="/educacoincs" fragment="produtos">Kits Completos</a></li>
+                <li><a routerLink="/educacoincs" fragment="combos">Combos Especiais</a></li>
 
-<div class="footer-bottom">
-  <p>© 2025 CornCoins - Educação Financeira Infantil. Todos os direitos reservados.</p>
-</div>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Instituições</h4>
+            <ul class="footer-links">
+                <li><a routerLink="/educacoincs" fragment="combos">Para Escolas</a></li>
+                <li><a routerLink="/educacoincs" fragment="combos">Treinamento para Professores</a></li>
+                <li><a routerLink="/educacoincs" fragment="combos">Material Didático</a></li>
+                <li><a routerLink="/educacoincs" fragment="combos">Parcerias</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Suporte</h4>
+            <ul class="footer-links">
+                <li><a routerLink="#">FAQ</a></li>
+                <li><a routerLink="#">Contato</a></li>
+                <li><a routerLink="#">Política de Privacidade</a></li>
+                <li><a routerLink="#">Termos de Uso</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 CornCoins - Educação Financeira Infantil. Todos os direitos reservados.</p>
+    </div>
+
 </footer>

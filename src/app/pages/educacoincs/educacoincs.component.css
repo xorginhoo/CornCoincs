@@ -1,9 +1,5 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
-
 }
 
 :root {
@@ -702,7 +698,7 @@ body {
     }
 
     .logo {
-        width: 80%;
+        width: 90%;
         margin: 10px;
     }
 
@@ -758,6 +754,9 @@ body {
         width: 80%;
     }
 
+    .back-button{
+        width: 80%;
+    }
     .hero {
         padding: 4rem 2rem;
     }
@@ -825,5 +824,139 @@ body {
 
     .product-price {
         font-size: 1.9rem;
+    }
+}
+
+/* NAV quando a página é rolada */
+.nav {
+    transition: background-color 300ms ease, box-shadow 300ms ease, backdrop-filter 300ms ease;
+    will-change: background-color, box-shadow;
+  }
+  
+  /* classe quando scrolled */
+  .nav.scrolled {
+    background-color: rgba(15, 23, 18, 0.92); /* cor escura translúcida (ajuste se quiser) */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+  }
+  
+  /* mobile menu — certeza de que ocupa o topo e animação suave */
+  .mobile-menu {
+    transform-origin: top;
+    transition: opacity 220ms ease, transform 220ms ease;
+    opacity: 0;
+    transform: scaleY(0.95);
+    pointer-events: none;
+  }
+  
+  /* ativa o menu */
+  .mobile-menu.active {
+    opacity: 1;
+    transform: scaleY(1);
+    pointer-events: auto;
+  }
+  
+  /* estilo para o botão quando menu aberto (opcional visual) */
+  .mobile-menu-btn.open {
+    background: rgba(0,0,0,0.06);
+    transform: rotate(90deg);
+  }
+  
+  .nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+    z-index: 1000;
+}
+
+/* Quando rolar a página */
+.nav.scrolled {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* ============================
+   BOTÃO MENU HAMBÚRGUER
+============================ */
+.mobile-menu-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff0000;
+    display: none; /* só aparece no mobile */
+    z-index: 1100;
+    transition: transform 0.3s ease;
+}
+
+/* animação quando menu estiver aberto */
+.mobile-menu-btn.open {
+    transform: rotate(90deg);
+}
+
+/* ============================
+   MENU MOBILE
+============================ */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75%;
+    max-width: 300px;
+
+    background: #ec2525;
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+
+    z-index: 1050;
+}
+
+/* quando menu abre */
+.mobile-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* estilo dos links do menu */
+.mobile-menu a,
+.mobile-menu button {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    border: none;
+    background: none;
+}
+
+.mobile-menu a:hover,
+.mobile-menu button:hover {
+    opacity: 0.7;
+}
+
+/* ============================
+   MEDIA QUERY (Mobile)
+============================ */
+@media (max-width: 800px) {
+    .mobile-menu-btn {
+        display: block; /* agora aparece no mobile */
+    }
+
+    /* esconde o menu desktop se existir */
+    .nav-links {
+        display: none;
     }
 }

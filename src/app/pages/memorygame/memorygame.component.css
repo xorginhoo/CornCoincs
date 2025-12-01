@@ -217,3 +217,29 @@ footer {
     background-color: rgb(255, 200, 0);
 }
 
+
+/* --- Verso padrão das cartas --- */
+.card .back {
+    background-image: url("/img/cards/cornCard.svg"); /* altere para sua imagem */
+}
+
+/* --- Frente das cartas usando seus data-item --- */
+.card[data-item="guguCard"] .front {
+    background-image: url("/img/cards/gugu.png");
+}
+
+.card[data-item="mimooCard"] .front {
+    background-image: url("/img/cards/mimoo.png");
+}
+
+.card[data-item="veveCard"] .front {
+    background-image: url("/img/cards/veve.png");
+}
+
+.card[data-item="ticoCard"] .front {
+    background-image: url("/img/cards/tico.png");
+}
+
+.card[data-item="taurusCard"] .front {
+    background-image: url("/img/cards/taurus.png");
+}

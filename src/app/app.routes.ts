@@ -9,7 +9,8 @@ import { MemorygameComponent } from './pages/memorygame/memorygame.component';
 import { MemorygameLoginComponent } from './pages/memorygame-login/memorygame-login.component';
 
 export const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'esqueceusenha', component: EsqueciSenhaComponent },
   { path: 'educacoincs', component: EducacoincsComponent },
