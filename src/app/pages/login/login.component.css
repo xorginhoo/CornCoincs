@@ -397,7 +397,7 @@
     }
 
     .logo {
-        width: 280px;
+        width: 380px;
         margin-bottom: 15px;
     }
 
@@ -414,6 +414,7 @@
     }
 
     .tabs {
+        width: 280px;
         border-radius: 20px;
         padding: 4px;
     }

@@ -658,6 +658,8 @@ body {
     .combo-card.featured {
         transform: scale(1);
     }
+
+
 }
 
 @media (min-width: 1024px) {
@@ -701,6 +703,7 @@ body {
         width: 90%;
         margin: 10px;
     }
+
 
     .botao-escolas {
         padding: 10px;
@@ -748,6 +751,10 @@ body {
 
     .nav {
         padding: 1rem 2rem;
+    }
+
+    .nav-menu {
+        display: none;
     }
 
     .logo {

@@ -228,7 +228,7 @@
   }
 
   .logo {
-    width: 350px;
+    width: 90%;
     margin-bottom: 20px;
   }
 
@@ -282,7 +282,7 @@
   }
 
   .logo {
-    width: 250px;
+    width: 90%;
     margin-bottom: 5px;
   }
 
@@ -331,7 +331,7 @@
 @media (max-width: 360px) {
 
   .logo {
-    width: 210px;
+    width: 90%;
   }
 
   .botao-som,
@@ -340,11 +340,11 @@
   }
 
   .botao {
-    height: 55px;
+    height: 65px;
   }
 
   .botao span {
-    font-size: 14px;
+    font-size: 16px;
   }
 
 }

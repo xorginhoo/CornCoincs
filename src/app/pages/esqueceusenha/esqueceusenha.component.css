@@ -1,12 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-/* Reset básico e fontes */
-
-* {
-    box-sizing: border-box;
-}
+/* ====================== BASE ====================== */
 
 .bg-container {
     width: 100%;
@@ -17,20 +9,7 @@
     background-attachment: fixed;
 }
 
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-image: url("/public/img/lock-wallpaper.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-
-}
-
-/* Botão de voltar no canto */
+/* Botão de voltar */
 .back-button {
     position: absolute;
     top: 20px;
@@ -40,7 +19,7 @@ html {
     z-index: 100;
 }
 
-/* Container principal que divide a tela */
+/* Container principal */
 .main-container {
     display: flex;
     width: 100%;
@@ -50,7 +29,7 @@ html {
     padding: 20px;
 }
 
-/* Painel da Esquerda (Logo e Mascote) */
+/* Painel esquerdo */
 .left-panel {
     flex-basis: 50%;
     position: relative;
@@ -60,6 +39,7 @@ html {
     justify-content: center;
 }
 
+/* Logo */
 .logo {
     position: absolute;
     top: 100px;
@@ -68,13 +48,14 @@ html {
     margin-bottom: 200px;
 }
 
+/* Mascote */
 .mascot {
     width: 600px;
     max-width: 90%;
     margin-bottom: -20px;
 }
 
-/* Painel da Direita (Formulário) */
+/* Painel direito */
 .right-panel {
     flex-basis: 50%;
     display: flex;
@@ -83,6 +64,7 @@ html {
     padding-left: 5%;
 }
 
+/* Conteúdo do formulário */
 #form-area {
     width: 80%;
     max-width: 400px;
@@ -92,30 +74,26 @@ h2 {
     font-size: 30px;
     font-family: "Mochiy Pop P One", sans-serif;
     color: rgb(255, 255, 255);
-    text-shadow:
-        -1px -1px 0 #000,
-        /* Canto superior esquerdo */
-        1px -1px 0 #000,
-        /* Canto superior direito */
-        -1px 1px 0 #000,
-        /* Canto inferior esquerdo */
-        1px 1px 0 #000;
-    /* Canto inferior direito */
+    text-shadow: -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                 -1px 1px 0 #000,
+                 1px 1px 0 #000;
 }
 
 p {
-    color: #ffff;
+    color: #fff;
     font-weight: bold;
     font-family: "Montserrat", sans-serif;
 }
 
-/* FORMULÁRIOS GERADOS VIA JS */
+/* Inputs e Botões */
 input {
     width: 100%;
     padding: 12px;
     margin-top: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
 }
 
 button {
@@ -127,8 +105,15 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s;
 }
 
+button:hover {
+    opacity: 0.9;
+}
+
+/* Inputs de código */
 .codigo-box {
     display: flex;
     gap: 10px;
@@ -141,12 +126,15 @@ button {
     text-align: center;
 }
 
-/* Notebooks (entre 1024px e 1366px) */
+/* ====================== MEDIA QUERIES ====================== */
+
+/* --- 1366px --- */
 @media (max-width: 1366px) {
 
     .logo {
         width: 320px;
         top: 80px;
+        margin-bottom: 150px;
     }
 
     .mascot {
@@ -156,38 +144,38 @@ button {
     #form-area {
         max-width: 350px;
     }
-
-    button {
-        font-size: 15px;
-    }
 }
 
-/* Tablets (entre 577px e 1024px) */
-@media (max-width: 1024px) and (min-width: 577px) {
+/* --- 1024px --- */
+@media (max-width: 1024px) {
 
     .main-container {
         flex-direction: column;
+        padding: 40px 20px;
         height: auto;
-        padding: 30px;
     }
 
-    .left-panel,
+    .left-panel {
+        height: auto;
+        margin-bottom: 30px;
+        order: 1;
+    }
+
     .right-panel {
-        flex-basis: unset;
-        width: 100%;
-        text-align: center;
         justify-content: center;
+        padding-left: 0;
+        order: 2;
     }
 
     .logo {
-        width: 350px;
-        margin: 20px auto;
         position: relative;
-        top: 0;
+        top: auto;
+        width: 380px;
+        margin-bottom: 20px;
     }
 
     .mascot {
-        width: 400px;
+        width: 40%;
         margin: 0 auto;
     }
 
@@ -201,18 +189,36 @@ button {
     }
 }
 
-/* Celulares (até 576px) */
+/* --- 768px --- */
+@media (max-width: 768px) {
+
+    .main-container {
+        padding: 20px 5px;
+    }
+
+    .logo {
+        width: 330px;
+    }
+
+    .mascot {
+        display: none;
+    }
+
+    #form-area {
+        max-width: 420px;
+        width: 100vw;
+    }
+}
+
+/* --- 576px --- */
 @media (max-width: 576px) {
 
-
-    body,
-    html {
+    body, html {
         overflow: auto;
     }
 
     .main-container {
         padding: 20px 10px;
-        height: auto;
     }
 
     .back-button {
@@ -226,7 +232,7 @@ button {
     }
 
     .logo {
-        width: 280px;
+        width: 260px;
         margin-bottom: 15px;
     }
 
@@ -234,94 +240,41 @@ button {
         display: none;
     }
 
-    .form-container {
-        padding: 15px 20px;
-        border-radius: 20px;
+    #form-area {
         width: 100%;
         max-width: 320px;
-        height: auto;
     }
 
-    .tabs {
-        border-radius: 20px;
-        padding: 4px;
+    input {
+        font-size: 14px;
+        padding: 10px;
     }
 
-    .tab-btn {
-        padding: 8px;
-        font-size: 12px;
-        border-radius: 20px;
-    }
-
-    .input-group input {
-        padding: 10px 10px 10px 35px;
-        font-size: 13px;
-    }
-
-    .input-group .icon {
-        left: 12px;
+    button {
+        padding: 10px;
         font-size: 14px;
     }
-
-    .btn {
-        padding: 10px;
-        font-size: 13px;
-    }
-
-    .btn-google {
-        gap: 8px;
-    }
-
-    .btn-google i {
-        font-size: 16px;
-    }
-
-    .separator {
-        margin: 15px 0;
-        font-size: 12px;
-    }
-
-    .forgot-password {
-        font-size: 11px;
-    }
-
-    .terms-text {
-        font-size: 10px;
-    }
-
-    .checkbox-group label {
-        font-size: 11px;
-    }
-
-
 }
 
-/* Celulares muito pequenos (até 360px) */
+/* --- 360px --- */
 @media (max-width: 360px) {
+
     .main-container {
         padding: 15px 8px;
     }
 
+    .logo {
+        width: 240px;
+        margin-top: 25px;
+    }
 
-    .form-container {
+    #form-area {
         width: 100%;
         max-width: 300px;
-        padding: 12px 15px;
     }
 
-    .logo {
-        margin-top: 30px;
-        width: 280px;
+    button {
+        padding: 10px;
+        font-size: 13px;
     }
-
-    .mascot {
-        display: none;
-    }
-
-    .tab-btn {
-        font-size: 11px;
-        padding: 6px;
-    }
-
-
 }
