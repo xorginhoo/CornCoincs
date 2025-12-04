@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Auth, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements AfterViewInit {
 
-  constructor(private router: Router) {}
+
+  constructor(private router: Router, private auth: Auth) {}
 
   ngAfterViewInit(): void {
     this.configurarAbas();
@@ -16,9 +18,7 @@ export class LoginComponent implements AfterViewInit {
     this.configurarValidacaoCadastro();
   }
 
-  // =========================
-  // 1. Alternância LOGIN / CADASTRO
-  // =========================
+  // Alternância entre Login e Cadastro
   private configurarAbas() {
     const loginTab = document.getElementById('login-tab');
     const registerTab = document.getElementById('register-tab');
@@ -41,7 +41,7 @@ export class LoginComponent implements AfterViewInit {
       registerTab.classList.add('active');
     });
 
-    // Evento de SUBMIT do login
+    // SUBMIT Login
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
@@ -54,14 +54,17 @@ export class LoginComponent implements AfterViewInit {
         return;
       }
 
-      // Login normal
-      this.loginComum(email, senha);
+      this.loginComLocalStorage(email, senha);
+    });
+
+    // SUBMIT Cadastro (salva no LocalStorage)
+    registerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      this.salvarCadastroNoLocalStorage();
     });
   }
 
-  // =========================
-  // 2. Mostrar / Esconder SENHA
-  // =========================
+  // Mostrar / esconder senha
   private configurarToggleSenha() {
     document.querySelectorAll('.toggle-password').forEach(icon => {
       icon.addEventListener('click', () => {
@@ -80,9 +83,7 @@ export class LoginComponent implements AfterViewInit {
     });
   }
 
-  // =========================
-  // 3. Validação do Cadastro (Termos obrigatórios)
-  // =========================
+  // Validação do checkbox de termos
   private configurarValidacaoCadastro() {
     const registerForm = document.getElementById('register-form');
     if (!registerForm) return;
@@ -96,11 +97,58 @@ export class LoginComponent implements AfterViewInit {
     });
   }
 
-  // =========================
-  // 4. Lógica de LOGIN normal
-  // =========================
-  private loginComum(email: string, senha: string) {
-    console.log('Login comum:', email, senha);
-    // Coloque aqui Firebase, API etc.
+  // ***************************
+  // 🔹 CADASTRO COM LOCALSTORAGE
+  // ***************************
+  private salvarCadastroNoLocalStorage() {
+    const registerForm = document.getElementById('register-form') as HTMLFormElement;
+    const email = (registerForm.querySelector('input[type="email"]') as HTMLInputElement)?.value;
+    const senha = (registerForm.querySelectorAll('.password-field')[0] as HTMLInputElement)?.value;
+    const confirmSenha = (registerForm.querySelectorAll('.password-field')[1] as HTMLInputElement)?.value;
+
+    if (senha !== confirmSenha) {
+      alert("As senhas não coincidem!");
+      return;
+    }
+
+    localStorage.setItem('usuarioEmail', email);
+    localStorage.setItem('usuarioSenha', senha);
+
+    alert("Cadastro realizado com sucesso! Faça login agora 👍");
+
+    // Mudar para a aba de login automaticamente
+    document.getElementById('login-tab')?.click();
   }
+
+  // *************************
+  // 🔹 LOGIN COM LOCALSTORAGE
+  // *************************
+  private loginComLocalStorage(email: string, senha: string) {
+    const emailSalvo = localStorage.getItem('usuarioEmail');
+    const senhaSalva = localStorage.getItem('usuarioSenha');
+
+    if (email === emailSalvo && senha === senhaSalva) {
+      this.router.navigate(['/menu']);
+    } else {
+      alert("Email ou senha incorretos!");
+    }
+  }
+
+  loginGoogle() {
+    const provider = new GoogleAuthProvider();
+  
+    signInWithPopup(this.auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log("Logado como:", user.email);
+  
+        // Redirecionar após login
+        this.router.navigate(['/menu']);
+      })
+      .catch((error) => {
+        console.error("Erro ao logar com Google:", error);
+        alert("Falha ao realizar login com Google");
+      });
+  }
+  
 }
