@@ -1,12 +1,15 @@
 <div class="bg-container">
-<header class="cabecalho">
-  <a routerLink="/menu" class="botao-voltar">
-    <img src="/img/esquerda.svg" alt="Voltar para o menu">
-  </a>
+<header>
+  <nav class="nav">
+    <a routerLink="/menu" >
+      <img src="/img/esquerda.svg" class="back-button" alt="Voltar para o menu">
+    </a>
 
-  <button class="botao-som" (click)="toggleSound(!isSoundOn)">
-    <i [class]="isSoundOn ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark'"></i>
-  </button>
+    <button class="botao-som" (click)="toggleSound(!isSoundOn)">
+      <i [class]="isSoundOn ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark'"></i>
+    </button>       
+</nav>
+
 </header>
 
 <main class="conteudo-principal">

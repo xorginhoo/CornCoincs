@@ -163,6 +163,7 @@
     height: 400px;
   }
 
+
 }
 
 /* Tablets (577px a 1024px) */
@@ -186,10 +187,44 @@
     padding: 0 20px;
   }
 
+  .botao-voltar{
+    width: 15%;
+  }
+
   .card-link,
   .card {
     width: 300px;
     height: 420px;
   }
 
+}
+
+@media (max-width: 576px) {
+  #logo {
+    width: 50%;
+  }
+
+  .titulo {
+    font-size: 1.9rem;
+  }
+
+  .subtitulo {
+    font-size: 0.9rem;
+  }
+
+  .container-cards {
+    gap: 25px;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+
+  .botao-voltar{
+    width: 20%;
+  }
+
+  .card-link,
+  .card {
+    width: 300px;
+    height: 420px;
+  }
 }

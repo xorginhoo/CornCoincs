@@ -685,7 +685,7 @@ body {
 ========================= */
 
 /* 📌 CELULARES — até 576px */
-@media (max-width: 576px) {
+@media (max-width: 800px) {
 
     /* Header */
     .nav {
@@ -742,6 +742,10 @@ body {
         font-size: 2.5rem;
         color: #FF1A1A;
     }
+
+    .nav-menu{
+        display: none;
+    }
 }
 
 
@@ -753,9 +757,6 @@ body {
         padding: 1rem 2rem;
     }
 
-    .nav-menu {
-        display: none;
-    }
 
     .logo {
         width: 80%;

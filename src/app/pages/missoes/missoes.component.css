@@ -19,13 +19,21 @@
 }
 
 /* --- HEADER --- */
-.cabecalho {
-  height: 60px;
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  flex-direction: column;
+  background-color: transparent;
+  position: fixed;
 }
 
 .botao-som {
@@ -40,21 +48,29 @@
 
 
 /* Botão de voltar no canto */
-.botao-voltar {
+.link-img-back {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 120px;
+  top: 15px;
+  left: 15px;
   cursor: pointer;
-  z-index: 100;
+  z-index: 2000; /* acima do restante */
 }
 
+.back-button {
+  width: 150px;
+  height: auto;
+  transition: 0.25s ease-in-out;
+}
+
+.back-button:hover {
+  transform: scale(1.12);
+}
 
 /* --- MAIN --- */
 
-#logo {
-  width: 350px;
-  margin-bottom: 30px;
+.logo {
+  width: 80%;
+  margin: 15px;
 }
 
 .conteudo-principal {
@@ -146,15 +162,148 @@
   font-size: 0.9rem;
   background: #82C45D;
   backdrop-filter: blur(5px);
- font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
 
 /* --- RESPONSIVO --- */
 @media (max-width: 480px) {
   .card-app {
-    width: 150px;
+    width: 120px;
     height: 150px;
     font-size: 20px;
+  }
+
+}
+
+/* =============================== */
+/* 📱 CELULARES – até 576px        */
+/* =============================== */
+
+@media (max-width: 576px) {
+  .nav {
+    padding: 0.8rem 1.2rem;
+  }
+
+
+
+  
+
+  #logo {
+    width: 220px;
+    margin-bottom: 20px;
+  }
+
+  .container-apps {
+    gap: 25px;
+  }
+
+  .card-app {
+    width: 160px;
+    height: 160px;
+    font-size: 18px;
+    border-radius: 25px;
+    box-shadow: #065d00 3px 6px;
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+  }
+
+  .subtitulo {
+    font-size: 0.9rem;
+  }
+
+  .back-button {
+    width: 80%;
+  }
+
+  .botao-som {
+    font-size: 35px;
+  }
+}
+
+
+/* =============================== */
+/* 📲 TABLETS – 577px a 1024px      */
+/* =============================== */
+
+@media (min-width: 577px) and (max-width: 1024px) {
+
+  #logo {
+    width: 290px;
+  }
+
+  .container-apps {
+    gap: 40px;
+  }
+
+  .card-app {
+    width: 240px;
+    height: 240px;
+    font-size: 25px;
+    border-radius: 35px;
+  }
+
+  .titulo {
+    font-size: 2.4rem;
+  }
+
+  .subtitulo {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* =============================== */
+/* 💻 NOTEBOOKS – 1025px a 1366px   */
+/* =============================== */
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+
+  #logo {
+    width: 330px;
+  }
+
+  .card-app {
+    width: 280px;
+    height: 280px;
+    font-size: 30px;
+    border-radius: 45px;
+  }
+
+  .container-apps {
+    gap: 50px;
+  }
+
+  .titulo {
+    font-size: 2.8rem;
+  }
+}
+
+
+/* =============================== */
+/* 🖥️ DESKTOPS GRANDES – 1367px+    */
+/* =============================== */
+
+@media (min-width: 1367px) {
+
+  #logo {
+    width: 380px;
+  }
+
+  .card-app {
+    width: 320px;
+    height: 320px;
+    font-size: 32px;
+    border-radius: 50px;
+  }
+
+  .container-apps {
+    gap: 60px;
+  }
+
+  .titulo {
+    font-size: 3rem;
   }
 }
