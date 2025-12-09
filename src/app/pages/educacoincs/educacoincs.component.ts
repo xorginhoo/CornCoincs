@@ -1,14 +1,35 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-educacoincs',
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './educacoincs.component.html',
   styleUrl: './educacoincs.component.css'
 })
 export class EducacoincsComponent {
   isMobileMenuOpen = false;
+
+  banners = [
+    "/img/promocoes/promo1.png",
+    "/img/promocoes/promo2.png",
+    "/img/promocoes/promo3.png",
+  ];
+
+  currentBanner = 0;
+  intervalTime = 4000; // tempo de troca 4s
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.currentBanner = (this.currentBanner + 1) % this.banners.length;
+    }, this.intervalTime);
+  }
+
+  getTransform() {
+    return `translateX(-${this.currentBanner * 100}%)`;
+  }
+
 
   // 👉 Função para abrir/fechar o menu ao clicar no botão hamburguer
   toggleMobileMenu() {
