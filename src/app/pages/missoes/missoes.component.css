@@ -25,7 +25,7 @@ header {
   z-index: 1000;
 }
 
-.nav {
+nav {
   width: 100%;
   margin: 0 auto;
   padding: 1rem 2rem;
@@ -34,6 +34,7 @@ header {
   align-items: center;
   background-color: transparent;
   position: fixed;
+  z-index: 1000;
 }
 
 .botao-som {
@@ -193,7 +194,7 @@ header {
 /* =============================== */
 
 @media (max-width: 576px) {
-  .nav {
+  nav {
     padding: 0.8rem 1.2rem;
   }
 
@@ -202,8 +203,8 @@ header {
   
 
   #logo {
-    width: 220px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 50%;
   }
 
   .container-apps {
@@ -227,7 +228,7 @@ header {
   }
 
   .back-button {
-    width: 80%;
+    width: 50%;
   }
 
   .botao-som {
@@ -243,7 +244,15 @@ header {
 @media (min-width: 577px) and (max-width: 1024px) {
 
   #logo {
-    width: 290px;
+    width: 45%;
+  }
+
+  .back-button{
+    width: 60%;
+  }
+
+  .botao-som{
+    font-size: 35px;
   }
 
   .container-apps {
