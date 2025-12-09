@@ -1,438 +1,151 @@
 .bg-container {
-    width: 100%;
-    height: 100vh;
     background-image: url('/img/background1.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-}
-
-
-/* Botão de voltar no canto */
-.back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 120px;
-    cursor: pointer;
-    z-index: 100;
-}
-
-/* Container principal que divide a tela */
-.main-container {
-    display: flex;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Painel da Esquerda (Logo e Mascote) */
-.left-panel {
-    flex-basis: 50%;
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.logo {
-    position: absolute;
-    top: 100px;
-    width: 450px;
-    max-width: 80%;
-    margin-bottom: 200px;
-}
-
-.mascot {
-    width: 600px;
-    max-width: 90%;
-    margin-bottom: -20px;
-}
-
-/* Painel da Direita (Formulário) */
-.right-panel {
-    flex-basis: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 5%;
-    font-family: "Montserrat", sans-serif;
-}
-
-/* O container branco do formulário */
-.form-container {
-    background-color: #fff;
-    padding: 60px 40px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    max-width: 100%;
-    border: solid 1px #202020;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-}
-
-/* Estilo das Abas (Login / Cadastro) */
-.tabs {
-    display: flex;
-    background-color: #f0f0f0;
-    border-radius: 25px;
-    margin-bottom: 25px;
-    width: 400px;
-    height: 70px;
-    padding: 2px;
-    font-family: "Mochiy Pop P One", sans-serif;
-}
-
-.tab-btn {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    border-radius: 25px;
-    background-color: transparent;
-    color: #888;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 20px;
-    font-family: "Mochiy Pop P One", sans-serif;
-    font-weight: 200;
-}
-
-.tab-btn.active {
-    background-color: #FFAAAA;
-    color: #AA3838;
-    font-size: 24px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.form-content {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form-content.active {
     display: flex;
 }
 
-/* Grupo de Input (ícone + campo) */
-.input-group {
-    position: relative;
-    margin-bottom: 15px;
-    width: 100%;
-}
+    /* Botão de voltar no canto */
+    .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 120px;
+        cursor: pointer;
+        z-index: 100;
+    }
 
-.input-group .icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #aaa;
-}
+    /* Container principal que divide a tela */
+    .main-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
 
-.input-group input {
-    width: 100%;
-    padding: 12px 12px 12px 40px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-size: 14px;
-    border: 2px solid #ccc;
-    transition: all 0.2s ease-in;
-}
-
-.input-group input:focus {
-    border: 2px solid #FF2D2D;
-    box-shadow: 0 0 8px rgba(255, 45, 45, 0.5);
-    outline: none;
-}
-
-.forgot-password {
-    font-size: 10px;
-    color: #888;
-    align-self: flex-end;
-    text-decoration: none;
-    margin-top: -10px;
-    margin-bottom: 20px;
-}
-
-/* Botões */
-.btn {
-    padding: 15px;
-    border: none;
-    border-radius: 18px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: opacity 0.3s;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn:hover {
-    opacity: 0.9;
-}
-
-.btn-primary {
-    background-color: #FF2D2D;
-    color: white;
-    width: 70%;
-    height: 60px;
-}
-
-.btn-google {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    color: #555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px;
-    width: 70%;
-    height: 60px;
-}
-
-.btn-google i {
-    font-size: 18px;
-    color: #FF2D2D;
-}
-
-/* Separador "ou" */
-.separator {
-    text-align: center;
-    color: #aaa;
-    margin: 20px 0;
-    font-size: 14px;
-}
-
-/* Textos e Checkboxes do Cadastro */
-.terms-text {
-    font-size: 11px;
-    color: #777;
-    margin-bottom: 15px;
-    line-height: 1.4;
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    align-self: flex-start;
-}
-
-.checkbox-group input {
-    margin-right: 8px;
-}
-
-.checkbox-group input:focus {
-    border-color: #FF2D2D;
-}
-
-.checkbox-group label {
-    font-size: 12px;
-    color: #555;
-}
-
-/* ========== MEDIA QUERIES PARA RESPONSIVIDADE ========== */
-/* Notebooks (1024px a 1366px) */
-@media (max-width: 1366px) {
+    /* Painel da Esquerda (Logo e Mascote) */
+    .left-panel {
+        flex-basis: 50%;
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
 
     .logo {
-        width: 320px;
-        top: 80px;
-        margin-bottom: 150px;
+        position: absolute;
+        top: 100px;
+        width: 450px;
+        max-width: 80%;
+        margin-bottom: 200px;
     }
 
     .mascot {
-        width: 420px;
+        width: 600px;
+        max-width: 90%;
+        margin-bottom: -20px;
     }
 
+    /* Painel da Direita (Formulário) */
+    .right-panel {
+        flex-basis: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 5%;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    /* O container branco do formulário */
     .form-container {
-        width: 480px;
-        height: 600px;
-        padding: 40px 30px;
+        background-color: #fff;
+        padding: 60px 40px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 600px;
+        max-width: 100%;
+        border: solid 1px #202020;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
     }
 
-    .btn-primary,
-    .btn-google {
-        width: 280px;
-        height: 50px;
-    }
-
+    /* Estilo das Abas (Login / Cadastro) */
     .tabs {
-        width: 350px;
-        height: 65px;
+        display: flex;
+        background-color: #f0f0f0;
+        border-radius: 25px;
+        margin-bottom: 25px;
+        width: 400px;
+        height: 70px;
+        padding: 2px;
+        font-family: "Mochiy Pop P One", sans-serif;
     }
 
     .tab-btn {
-        font-size: 18px;
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 25px;
+        background-color: transparent;
+        color: #888;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        font-size: 20px;
+        font-family: "Mochiy Pop P One", sans-serif;
+        font-weight: 200;
     }
 
     .tab-btn.active {
-        font-size: 21px;
+        background-color: #FFAAAA;
+        color: #AA3838;
+        font-size: 24px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-}
-
-
-/* Tablets (768px a 1024px) */
-@media (max-width: 1024px) {
-    .main-container {
-        flex-direction: column;
-        padding: 40px 20px;
-        height: auto;
-        min-height: 100vh;
-    }
-
-    .left-panel {
-        flex-basis: auto;
-        height: auto;
-        margin-bottom: 30px;
-        order: 1;
-    }
-
-    .right-panel {
-        flex-basis: auto;
-        padding-left: 0;
-        justify-content: center;
-        order: 2;
-    }
-
-    .logo {
-        position: relative;
-        top: auto;
-        width: 500px;
-        margin-bottom: 20px;
-    }
-
-    .mascot {
-        width: 400px;
+    .form-content {
         display: none;
-    }
-
-    .form-container {
-        width: 500px;
-        height: auto;
-        min-height: 600px;
-        padding: 25px 30px;
-    }
-
-    .back-button {
-        width: 80px;
-        top: 15px;
-        left: 15px;
-    }
-
-
-}
-
-/* Tablets Pequenos e Celulares Grandes (576px a 768px) */
-@media (max-width: 768px) {
-    .main-container {
-        padding: 20px 5px;
-    }
-
-    .logo {
-        width: 450px;
-    }
-
-    .mascot {
-        width: 300px;
-    }
-
-    .form-container {
-        width: 100vw;
-        max-width: 450px;
-        padding: 20px 25px;
-        height: auto;
-    }
-
-    .tabs {
-        margin-bottom: 20px;
-    }
-
-    .tab-btn {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .btn {
-        padding: 12px;
-        font-size: 14px;
-    }
-
-
-}
-
-/* Celulares (até 576px) */
-@media (max-width: 576px) {
-
-
-    body,
-    html {
-        overflow: auto;
-    }
-
-    .main-container {
-        padding: 20px 10px;
-        height: auto;
-    }
-
-    .back-button {
-        width: 70px;
-        top: 10px;
-        left: 10px;
-    }
-
-    .left-panel {
-        margin-bottom: 20px;
-    }
-
-    .logo {
-        width: 380px;
-        margin-bottom: 15px;
-    }
-
-    .mascot {
-        display: none;
-    }
-
-    .form-container {
-        padding: 15px 20px;
-        border-radius: 20px;
         width: 100%;
-        max-width: 320px;
-        height: auto;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .tabs {
-        width: 280px;
-        border-radius: 20px;
-        padding: 4px;
-    }
-
-    .tab-btn {
-        padding: 8px;
-        font-size: 12px;
-        border-radius: 20px;
-    }
-
-    .input-group {
+    .form-content.active {
         display: flex;
     }
 
+    /* Grupo de Input (ícone + campo) */
+    .input-group {
+        position: relative;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .input-group .icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #aaa;
+    }
+
     .input-group input {
-        padding: 10px 10px 10px 35px;
-        font-size: 13px;
-        border: 1px solid #ccc;
+        width: 100%;
+        padding: 12px 12px 12px 40px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-size: 14px;
+        border: 2px solid #ccc;
+        transition: all 0.2s ease-in;
     }
 
     .input-group input:focus {
@@ -441,83 +154,371 @@
         outline: none;
     }
 
-    .input-group .icon {
-        left: 12px;
-        font-size: 14px;
+    .forgot-password {
+        font-size: 10px;
+        color: #888;
+        align-self: flex-end;
+        text-decoration: none;
+        margin-top: -10px;
+        margin-bottom: 20px;
     }
 
+    /* Botões */
     .btn {
-        padding: 10px;
-        font-size: 13px;
+        padding: 15px;
+        border: none;
+        border-radius: 18px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: opacity 0.3s;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+
+    .btn-primary {
+        background-color: #FF2D2D;
+        color: white;
+        width: 70%;
+        height: 60px;
     }
 
     .btn-google {
-        gap: 8px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        color: #555;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+        width: 70%;
+        height: 60px;
     }
 
     .btn-google i {
-        font-size: 16px;
+        font-size: 18px;
+        color: #FF2D2D;
     }
 
+    /* Separador "ou" */
     .separator {
-        margin: 15px 0;
-        font-size: 12px;
+        text-align: center;
+        color: #aaa;
+        margin: 10px 0;
+        font-size: 14px;
     }
 
-    .forgot-password {
-        font-size: 11px;
-    }
-
+    /* Textos e Checkboxes do Cadastro */
     .terms-text {
-        font-size: 10px;
+        font-size: 11px;
+        color: #777;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        align-self: flex-start;
+    }
+
+    .checkbox-group input {
+        margin-right: 8px;
+    }
+
+    .checkbox-group input:focus {
+        border-color: #FF2D2D;
     }
 
     .checkbox-group label {
-        font-size: 11px;
+        font-size: 12px;
+        color: #555;
+    }
+
+    /* ========== MEDIA QUERIES PARA RESPONSIVIDADE ========== */
+    /* Notebooks (1024px a 1366px) */
+    @media (max-width: 1366px) {
+
+        .logo {
+            width: 320px;
+            top: 80px;
+            margin-bottom: 150px;
+        }
+
+        .mascot {
+            width: 420px;
+        }
+
+        .form-container {
+            width: 480px;
+            height: 600px;
+            padding: 40px 30px;
+        }
+
+        .btn-primary,
+        .btn-google {
+            width: 280px;
+            height: 50px;
+        }
+
+        .tabs {
+            width: 350px;
+            height: 65px;
+        }
+
+        .tab-btn {
+            font-size: 18px;
+        }
+
+        .tab-btn.active {
+            font-size: 21px;
+        }
+
     }
 
 
-}
+    /* Tablets (768px a 1024px) */
+    @media (max-width: 1024px) {
+        .main-container {
+            flex-direction: column;
+            padding: 40px 20px;
+            height: auto;
+            min-height: 100vh;
+        }
 
-/* Celulares muito pequenos (até 360px) */
-@media (max-width: 360px) {
-    .main-container {
-        padding: 15px 8px;
+        .left-panel {
+            flex-basis: auto;
+            height: auto;
+            margin-bottom: 30px;
+            order: 1;
+        }
+
+        .right-panel {
+            flex-basis: auto;
+            padding-left: 0;
+            justify-content: center;
+            order: 2;
+        }
+
+        .logo {
+            position: relative;
+            top: auto;
+            width: 500px;
+            margin-bottom: 20px;
+        }
+
+        .mascot {
+            width: 400px;
+            display: none;
+        }
+
+        .form-container {
+            width: 500px;
+            height: auto;
+            min-height: 600px;
+            padding: 25px 30px;
+        }
+
+        .back-button {
+            width: 80px;
+            top: 15px;
+            left: 15px;
+        }
+
+
     }
 
+    /* Tablets Pequenos e Celulares Grandes (576px a 768px) */
+    @media (max-width: 768px) {
+        .main-container {
+            padding: 20px 5px;
+        }
 
-    .form-container {
-        width: 100%;
-        max-width: 300px;
-        padding: 12px 15px;
+        .logo {
+            width: 450px;
+        }
+
+        .mascot {
+            width: 300px;
+        }
+
+        .form-container {
+            width: 100vw;
+            max-width: 450px;
+            padding: 20px 25px;
+            height: auto;
+        }
+
+        .tabs {
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 12px;
+            font-size: 14px;
+        }
+
+
     }
 
-    .logo {
-        margin-top: 30px;
-        width: 280px;
+    /* Celulares (até 576px) */
+    @media (max-width: 576px) {
+
+
+        body,
+        html {
+            overflow: auto;
+        }
+
+        .main-container {
+            padding: 20px 10px;
+            height: auto;
+        }
+
+        .back-button {
+            width: 70px;
+            top: 10px;
+            left: 10px;
+        }
+
+        .left-panel {
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 380px;
+            margin-bottom: 15px;
+        }
+
+        .mascot {
+            display: none;
+        }
+
+        .form-container {
+            padding: 15px 20px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+        }
+
+        .tabs {
+            width: 280px;
+            border-radius: 20px;
+            padding: 4px;
+        }
+
+        .tab-btn {
+            padding: 8px;
+            font-size: 12px;
+            border-radius: 20px;
+        }
+
+        .input-group {
+            display: flex;
+        }
+
+        .input-group input {
+            padding: 10px 10px 10px 35px;
+            font-size: 13px;
+            border: 1px solid #ccc;
+        }
+
+        .input-group input:focus {
+            border: 2px solid #FF2D2D;
+            box-shadow: 0 0 8px rgba(255, 45, 45, 0.5);
+            outline: none;
+        }
+
+        .input-group .icon {
+            left: 12px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px;
+            font-size: 13px;
+        }
+
+        .btn-google {
+            gap: 8px;
+        }
+
+        .btn-google i {
+            font-size: 16px;
+        }
+
+        .separator {
+            margin: 15px 0;
+            font-size: 12px;
+        }
+
+        .forgot-password {
+            font-size: 11px;
+        }
+
+        .terms-text {
+            font-size: 10px;
+        }
+
+        .checkbox-group label {
+            font-size: 11px;
+        }
+
+
     }
 
-    .mascot {
-        display: none;
+    /* Celulares muito pequenos (até 360px) */
+    @media (max-width: 360px) {
+        .main-container {
+            padding: 15px 8px;
+        }
+
+
+        .form-container {
+            width: 100%;
+            max-width: 300px;
+            padding: 12px 15px;
+        }
+
+        .logo {
+            margin-top: 30px;
+            width: 280px;
+        }
+
+        .mascot {
+            display: none;
+        }
+
+        .tab-btn {
+            font-size: 11px;
+            padding: 6px;
+        }
+
+
     }
 
-    .tab-btn {
-        font-size: 11px;
-        padding: 6px;
+    .toggle-password {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #aaa;
+        font-size: 18px;
     }
 
-
-}
-.toggle-password {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #aaa;
-    font-size: 18px;
-}
-
-.toggle-password:hover {
-    color: #FF2D2D;
-}
+    .toggle-password:hover {
+        color: #FF2D2D;
+    }

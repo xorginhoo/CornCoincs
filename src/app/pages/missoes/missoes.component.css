@@ -131,8 +131,20 @@ header {
   box-shadow: #065d00 5px 10px;
 }
 
-#MG {
-  background-image: url(../../../../public/img/MemoryGame-Banner.png);
+#game1 {
+  background-image: url(/img/gameIcons/MemoryGame-Banner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#game2 {
+  background-image: url(/img/gameIcons/MathGame.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#game3 {
+  background-image: url(/img/gameIcons/QuizGame.png);
   background-size: cover;
   background-repeat: no-repeat;
 }

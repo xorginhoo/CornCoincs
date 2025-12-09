@@ -14,3 +14,12 @@ html {
     min-height: 100%;
     scroll-behavior: smooth;
 }
+
+button, a, .card {
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.1);
+}
