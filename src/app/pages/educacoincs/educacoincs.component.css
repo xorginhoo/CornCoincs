@@ -40,7 +40,7 @@ body {
 /* =========================
    HEADER STYLES
 ========================= */
-.header {
+header {
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -49,8 +49,8 @@ body {
 .nav {
     width: 100%;
     margin: 0 auto;
-    padding: 1rem 2rem;
     display: flex;
+    padding: 10px;
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
@@ -92,10 +92,6 @@ body {
     padding: 16px;
 }
 
-.nav-link:hover {
-    opacity: 1;
-    color: var(--primary);
-}
 
 .btn {
     padding: 0.75rem 1.5rem;
@@ -109,6 +105,19 @@ body {
     gap: 0.5rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    position: absolute;
+    left: 25px;
+    top: 10%;
+    width: 150px;
+    cursor: pointer;
+    ;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
 }
 
 .botao-hero {
@@ -694,16 +703,17 @@ body {
         align-items: center;
     }
 
-    .link-img-back {
-        display: flex;
-        align-items: center;
-    }
+
 
     .logo {
         width: 90%;
         margin: 10px;
     }
 
+    .back-button {
+        margin-top: 10px;
+        width: 25%;
+    }
 
     .botao-escolas {
         padding: 10px;
@@ -734,16 +744,14 @@ body {
         font-size: 1rem;
     }
 
-    .back-button {
-        width: 70%;
-    }
+
 
     .mobile-menu-btn {
         font-size: 2.5rem;
         color: #FF1A1A;
     }
 
-    .nav-menu{
+    .nav-menu {
         display: none;
     }
 }
@@ -762,9 +770,7 @@ body {
         width: 80%;
     }
 
-    .back-button{
-        width: 80%;
-    }
+
     .hero {
         padding: 4rem 2rem;
     }
@@ -839,38 +845,39 @@ body {
 .nav {
     transition: background-color 300ms ease, box-shadow 300ms ease, backdrop-filter 300ms ease;
     will-change: background-color, box-shadow;
-  }
-  
-  /* classe quando scrolled */
-  .nav.scrolled {
-    background-color: rgba(15, 23, 18, 0.92); /* cor escura translúcida (ajuste se quiser) */
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* classe quando scrolled */
+.nav.scrolled {
+    background-color: rgba(15, 23, 18, 0.92);
+    /* cor escura translúcida (ajuste se quiser) */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6px);
-  }
-  
-  /* mobile menu — certeza de que ocupa o topo e animação suave */
-  .mobile-menu {
+}
+
+/* mobile menu — certeza de que ocupa o topo e animação suave */
+.mobile-menu {
     transform-origin: top;
     transition: opacity 220ms ease, transform 220ms ease;
     opacity: 0;
     transform: scaleY(0.95);
     pointer-events: none;
-  }
-  
-  /* ativa o menu */
-  .mobile-menu.active {
+}
+
+/* ativa o menu */
+.mobile-menu.active {
     opacity: 1;
     transform: scaleY(1);
     pointer-events: auto;
-  }
-  
-  /* estilo para o botão quando menu aberto (opcional visual) */
-  .mobile-menu-btn.open {
-    background: rgba(0,0,0,0.06);
+}
+
+/* estilo para o botão quando menu aberto (opcional visual) */
+.mobile-menu-btn.open {
+    background: rgba(0, 0, 0, 0.06);
     transform: rotate(90deg);
-  }
-  
-  .nav {
+}
+
+.nav {
     position: fixed;
     top: 0;
     width: 100%;
@@ -886,7 +893,7 @@ body {
 .nav.scrolled {
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* ============================
@@ -898,7 +905,8 @@ body {
     border: none;
     cursor: pointer;
     color: #ff0000;
-    display: none; /* só aparece no mobile */
+    display: none;
+    /* só aparece no mobile */
     z-index: 1100;
     transition: transform 0.3s ease;
 }
@@ -960,7 +968,8 @@ body {
 ============================ */
 @media (max-width: 800px) {
     .mobile-menu-btn {
-        display: block; /* agora aparece no mobile */
+        display: block;
+        /* agora aparece no mobile */
     }
 
     /* esconde o menu desktop se existir */
