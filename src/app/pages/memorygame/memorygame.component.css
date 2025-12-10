@@ -275,6 +275,23 @@ footer {
     footer {
         font-size: 0.75rem;
     }
+
+
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    /* antes era 80% */
+    max-width: 75%;
+    /* diminui o limite máximo */
+    gap: 10px;
+    margin-bottom: 10px;
+
+}
+.card{
+    width: 90%;
+}
+
 }
 
 
