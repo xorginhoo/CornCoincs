@@ -1,16 +1,15 @@
-
 .bg-container {
-  width: 100%;
-  min-height: 100vh;
-  background-image: url('/img/background1.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  cursor: url('/img/pointer.png'), auto;
-  font-family: "Mochiy Pop P One", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('/img/background1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    cursor: url('/img/pointer.png'), auto;
+    font-family: "Mochiy Pop P One", sans-serif;
 }
 
 /* --- HEADER --- */
@@ -21,8 +20,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    flex-direction: row; /* ✔ coloca tudo na mesma linha */
-    margin-bottom: 40px; 
+    flex-direction: row;
+    /* ✔ coloca tudo na mesma linha */
+    margin-bottom: 40px;
 }
 
 .botao-som {
@@ -81,18 +81,22 @@ main {
     gap: 20px;
 }
 
-.title{
+.title {
     font-size: 100px;
     margin-bottom: 10px;
     color: #ffe449;
     text-shadow:
-    -1px -1px 0 #000, /* Canto superior esquerdo */
-     1px -1px 0 #000, /* Canto superior direito */
-    -1px  1px 0 #000, /* Canto inferior esquerdo */
-     1px  1px 0 #000;  /* Canto inferior direito */
+        -1px -1px 0 #000,
+        /* Canto superior esquerdo */
+        1px -1px 0 #000,
+        /* Canto superior direito */
+        -1px 1px 0 #000,
+        /* Canto inferior esquerdo */
+        1px 1px 0 #000;
+    /* Canto inferior direito */
 }
 
-.register-input{
+.register-input {
     width: 320px;
     margin-top: 2rem;
     padding: 20px;
@@ -102,7 +106,7 @@ main {
 }
 
 
-.btn-register{
+.btn-register {
     width: 220px;
     padding: 25px;
     border-radius: 20px;
@@ -128,3 +132,97 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
 }
+
+
+/* ======================================================= */
+/* 📱 CELULAR — Até 576px */
+/* ======================================================= */
+@media (max-width: 576px) {
+
+    .logo {
+        width: 50%;
+    }
+
+    .title {
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .btn-register {
+        width: 180px;
+        padding: 18px;
+        font-size: 18px;
+    }
+
+    .botao-som {
+        font-size: 20px;
+    }
+
+    .botao-voltar {
+        width: 15%;
+    }
+
+    footer {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* ======================================================= */
+/* 📲 TABLET — 577px até 1024px */
+/* ======================================================= */
+@media (min-width: 577px) and (max-width: 1024px) {
+    .logo {
+        width: 45%;
+    }
+
+    .title {
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .btn-register {
+        width: 180px;
+        padding: 18px;
+        font-size: 18px;
+    }
+
+    .botao-som {
+        font-size: 40px;
+    }
+
+    .botao-voltar {
+        width: 15%;
+    }
+
+}
+
+    /* ======================================================= */
+    /* 💻 NOTEBOOK — 1025px até 1366px */
+    /* ======================================================= */
+    @media (min-width: 1025px) and (max-width: 1366px) {
+
+        .title {
+            font-size: 90px;
+        }
+
+        .logo {
+            width: 300px;
+        }
+    }
+
+
+    /* ======================================================= */
+    /* 🖥️ DESKTOP — Acima de 1366px */
+    /* ======================================================= */
+    @media (min-width: 1367px) {
+
+        .title {
+            font-size: 110px;
+        }
+
+        .logo {
+            width: 350px;
+        }
+
+    }
