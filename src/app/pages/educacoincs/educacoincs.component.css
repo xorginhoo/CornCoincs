@@ -540,10 +540,11 @@ header {
 }
 
 /* ======== NOTEBOOKS ======== */
-@media (min-width: 1025px) and (max-width: 1440px) {
+@media (min-width: 1025px) and (max-width: 1700px) {
   .carousel-item {
     height: 350px;
   }
+
 }
 
 

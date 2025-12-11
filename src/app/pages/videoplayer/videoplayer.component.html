@@ -1,0 +1,27 @@
+<div class="video-bg">
+
+  <!-- HEADER COM LOGO + VOLTAR -->
+  <header class="cabecalho">
+    
+    <!-- Botão voltar -->
+    <a routerLink="/colheitadosaber">
+      <img src="/img/esquerda.svg" class="botao-voltar">
+    </a>
+
+    <!-- Logo -->
+    <img src="/img/logo.svg" class="logo-header" id="logo">
+
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="conteudo-principal">
+      <div class="video-container">
+        <iframe [src]="videoUrl" allowfullscreen></iframe>
+      </div>
+  </main>
+
+  <footer class="rodape">
+    © Corn Coincs — Todos os direitos reservados.
+  </footer>
+
+</div>

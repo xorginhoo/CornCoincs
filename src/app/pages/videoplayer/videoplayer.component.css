@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+/* VARIÁVEIS */
+:root {
+  --cor-fundo: #254db1;
+  --cor-texto: #fff;
+}
+
+/* BACKGROUND GERAL */
+.video-bg {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/img/BackgroundNight.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* HEADER */
+.cabecalho {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* LOGO */
+#logo {
+  margin-top: 20px;
+  width: 400px;
+}
+
+/* LOGO RESPONSIVO */
+@media (max-width: 1366px) {
+  #logo { width: 100%; }
+}
+
+@media (max-width: 1024px) and (min-width: 577px) {
+  #logo { width: 90px; }
+}
+
+@media (max-width: 576px) {
+  #logo { width: 50%; }
+}
+
+@media (max-width: 480px) {
+  #logo { width: 40%; }
+}
+
+@media (max-width: 360px) {
+  #logo { width: 45%; }
+}
+
+/* BOTÃO VOLTAR — PADRÃO COLHEITA DO SABER */
+.botao-voltar {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 150px;
+  cursor: pointer;
+  transition: transform .3s;
+  z-index: 10;
+}
+
+.botao-voltar:hover {
+  transform: scale(1.1);
+}
+
+/* RESPONSIVIDADE DO BOTÃO VOLTAR */
+@media (max-width: 1024px) and (min-width: 577px) {
+  .botao-voltar { width: 15%; }
+}
+
+@media (max-width: 576px) {
+  .botao-voltar { width: 20%; }
+}
+
+@media (max-width: 480px) {
+  .botao-voltar { width: 25%; }
+}
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo-principal {
+  text-align: center;
+  padding: 20px;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* QUADRO DO VÍDEO */
+.video-container {
+  width: 90%;
+  max-width: 900px;
+  aspect-ratio: 16/9;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 0 25px #00000070;
+  animation: aparecer .7s ease forwards;
+}
+
+/* IFRAME */
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* FOOTER */
+.rodape {
+  text-align: center;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* VIDEO RESPONSIVO */
+@media (max-width: 576px) {
+  .video-container { max-width: 380px; }
+}
+
+@media (max-width: 480px) {
+  .video-container { max-width: 350px; }
+}
+
+@media (max-width: 1024px) and (min-width: 577px) {
+  .video-container { max-width: 600px; }
+}
+
+@media (max-width: 1366px) {
+  .video-container { max-width: 750px; }
+}

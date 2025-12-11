@@ -16,14 +16,14 @@
       
 
       <!-- CARD 1 - DISPONÍVEL -->
-      <a href="https://www.youtube.com/watch?v=XBZ4-Di7KPY" class="card-link">
+      <div class="card-link" [routerLink]="['/videoplayer']" [queryParams]="{ video: 'XBZ4-Di7KPY' }">
         <img src="/img/capa/EP1.png" class="card-img">
-      </a>
-
+      </div>
       <!-- CARD 2 - INDISPONÍVEL -->
-      <a href="https://youtu.be/3OnMhwD3WpU?si=ynTdk5TTTBNVRfcu" class="card-link">
+      <div class="card-link" [routerLink]="['/videoplayer']" [queryParams]="{ video: '3OnMhwD3WpU' }">
         <img src="/img/capa/bannerMusic.png" class="card-img">
-      </a>
+      </div>
+
 
     </div>
   </main>
