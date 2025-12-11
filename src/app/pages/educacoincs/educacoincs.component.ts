@@ -1,14 +1,19 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../services/cart.service'; // ← IMPORTANTE
 
 @Component({
   selector: 'app-educacoincs',
+  standalone: true,
   imports: [RouterLink, CommonModule],
   templateUrl: './educacoincs.component.html',
   styleUrl: './educacoincs.component.css'
 })
 export class EducacoincsComponent {
+
+  constructor(private cartService: CartService) {}  // ← INJEÇÃO DO CARRINHO
+
   isMobileMenuOpen = false;
 
   banners = [
@@ -18,7 +23,7 @@ export class EducacoincsComponent {
   ];
 
   currentBanner = 0;
-  intervalTime = 4000; // tempo de troca 4s
+  intervalTime = 4000; // 4 segundos
 
   ngOnInit(): void {
     setInterval(() => {
@@ -30,27 +35,25 @@ export class EducacoincsComponent {
     return `translateX(-${this.currentBanner * 100}%)`;
   }
 
+  // 👉 Função para adicionar produto ao carrinho
+  addToCart(item: any) {
+    this.cartService.addToCart(item);
+  }
 
-  // 👉 Função para abrir/fechar o menu ao clicar no botão hamburguer
+  // 👉 Abrir/fechar menu mobile
   toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const toggleBtn = document.getElementById('mobile-menu-toggle');
 
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
-    if (mobileMenu) {
-      mobileMenu.classList.toggle('active', this.isMobileMenuOpen);
-    }
+    if (mobileMenu) mobileMenu.classList.toggle('active', this.isMobileMenuOpen);
+    if (toggleBtn) toggleBtn.classList.toggle('open', this.isMobileMenuOpen);
 
-    if (toggleBtn) {
-      toggleBtn.classList.toggle('open', this.isMobileMenuOpen);
-    }
-
-    // Quando menu abre → impede o body de rolar
     document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
   }
 
-  // 👉 Fecha o menu ao clicar em qualquer link ou botão dentro dele
+  // 👉 Fecha o menu ao clicar em um link
   closeMobileMenuOnLinkClick() {
     const mobileMenu = document.getElementById('mobile-menu');
     const toggleBtn = document.getElementById('mobile-menu-toggle');
@@ -63,7 +66,7 @@ export class EducacoincsComponent {
     document.body.style.overflow = '';
   }
 
-  // 👉 Add background no navbar ao rolar
+  // 👉 Navbar com fundo ao rolar
   @HostListener('window:scroll', [])
   onScroll() {
     const nav = document.querySelector('.nav');

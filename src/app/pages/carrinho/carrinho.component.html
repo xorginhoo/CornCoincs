@@ -1,0 +1,53 @@
+<div class="cart-container">
+
+    <div class="cart-header">
+        <a routerLink="/educacoincs">
+            <img src="/img/esquerda.svg" alt="Voltar" class="back-button">
+        </a>
+        <h1>Seu Carrinho</h1>
+    </div>
+
+    <!-- CARRINHO VAZIO -->
+    <div class="cart-empty" *ngIf="items.length === 0">
+
+        <h2>Carrinho vazio</h2>
+        <p>Adicione materiais para continuar.</p>
+        <a routerLink="/educacoincs" class="btn-primary">Explorar Materiais</a>
+    </div>
+
+    <!-- LISTA DE ITENS -->
+    <div class="cart-items" *ngIf="items.length > 0">
+        <div class="cart-item" *ngFor="let item of items">
+            <img [src]="item.image" alt="Produto">
+
+            <div class="cart-item-info">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+            </div>
+
+            <div class="cart-item-price">
+                R$ {{ item.price }}
+            </div>
+
+            <button class="remove-btn" (click)="remove(item)">✖</button>
+        </div>
+    </div>
+
+    <!-- RESUMO -->
+    <div class="cart-summary" *ngIf="items.length > 0">
+        <h2>Resumo do Pedido</h2>
+
+        <div class="summary-row">
+            <span>Subtotal</span>
+            <span>R$ {{ subtotal }}</span>
+        </div>
+
+        <div class="summary-row summary-total">
+            <span>Total</span>
+            <span>R$ {{ subtotal }}</span>
+        </div>
+
+        <button class="btn-checkout">Finalizar Compra</button>
+    </div>
+
+</div>

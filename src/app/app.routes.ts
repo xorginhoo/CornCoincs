@@ -7,6 +7,7 @@ import { ColheitadosaberComponent } from './pages/colheitadosaber/colheitadosabe
 import { MissoesComponent } from './pages/missoes/missoes.component';
 import { MemorygameComponent } from './pages/memorygame/memorygame.component';
 import { MemorygameLoginComponent } from './pages/memorygame-login/memorygame-login.component';
+import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { VideoplayerComponent } from './pages/videoplayer/videoplayer.component';
 
 export const routes: Routes = [
@@ -19,5 +20,6 @@ export const routes: Routes = [
   { path: 'missoes', component: MissoesComponent },
   { path: 'memorygame', component: MemorygameComponent },
   { path: 'memorygame-login', component: MemorygameLoginComponent },
+  { path: 'carrinho', component: CarrinhoComponent },
   { path: 'videoplayer', component: VideoplayerComponent }
 ];
